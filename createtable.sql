@@ -1,12 +1,22 @@
-DROP TABLE IF EXISTS earthquakes;
-CREATE TABLE earthquakes (
-  quakedate date,
-  quaketime time with time zone,
-  latitude real,
-  longitude real,
-  quakedepth real,
-  mag real,
-  id text,
-  place text,
-  quaketype text
+DROP TABLE IF EXISTS boardgames;
+CREATE TABLE boardgames (
+  rank int,
+  game_id real,
+  game_name text,
+  min_players int,
+  max_players int,
+  avg_time real,
+  min_time real,
+  max_time real,
+  pub_year int,
+  avg_rating real,
+  geek_rating real,
+  num_votes int,
+  image_url text,
+  min_age int,
+  mechanic text,
+  owned int,
+  category text,
+  designer text,
+  weight real
 );
