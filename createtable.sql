@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS boardgames;
-CREATE TABLE boardgames (
+DROP TABLE IF EXISTS board-game-data;
+CREATE TABLE board-game-data (
   rank int,
   game_id real,
   game_name text,
