@@ -65,7 +65,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByPlayersAndAge(2,14)
+        query = gameSearch.getRandomGame();
              
         cursor.execute(query)
         
