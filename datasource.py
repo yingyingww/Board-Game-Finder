@@ -21,7 +21,7 @@ except Exception as e:
     exit()
 
 class DataSource:
-    #The following four methods collect data if either no of players, age, category or maxtime was selected alone
+    # The following four methods collect data if either no of players, age, category or maxtime was selected alone
     def getGamesByNumPlayers(self, numPlayers):
             numPlayers = str(numPlayers)
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
@@ -37,7 +37,11 @@ class DataSource:
             inputTime = str(inputTime)
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'ORDER BY rank ASC'
             return query
-    
+        
+    # The following four methods collect data for 
+    # a) no of players w age
+    # b) no of players w time
+    # c) no of players w category
     def getGamesByPlayersAndAge(self, numPlayers, inputAge):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND min_age <=' + str(inputAge) + 'ORDER BY rank ASC LIMIT 10'
             return query
@@ -45,7 +49,10 @@ class DataSource:
     def getGamesByPlayersAndTime(self, numPlayers, inputTime):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
             return query
-        
+    
+    # The following four methods collect data for 
+    # a) max age w time
+    # b) max age w category
     def getGamesByAgeAndTime(self, inputAge, inputTime):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + str(inputAge) + 'AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
             return query 
@@ -83,7 +90,7 @@ def main():
         #query = gameSearch.getGamesByCategory('Puzzle')
         #query = gameSearch.getGamesByPlayersAndAge(2,11)
         #query = gameSearch.getGamesByPlayersAndTime(2,60)
-        query = getGamesByAgeAndTime(12,60)
+        query = gameSearch.getGamesByAgeAndTime(12,60)
              
         cursor.execute(query)
         
