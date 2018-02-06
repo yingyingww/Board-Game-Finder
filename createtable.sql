@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS board-game-data;
+DROP TABLE IF EXISTS boardgames;
 CREATE TABLE boardgames (
   rank int,
   game_id real,
