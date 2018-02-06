@@ -36,7 +36,7 @@ class DataSource:
         
         
     def getGamesByCategory(self, category):
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC'
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE mechanic =' + category + 'ORDER BY rank ASC'
         return query
     
     def getGamesByMaxTime(self, inputTime):
@@ -52,7 +52,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getRandomGame()
+        query = gameSearch.getGamesByCategory("Co-operative")
 
         cursor.execute(query)
         
