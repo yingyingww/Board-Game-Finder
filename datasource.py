@@ -88,7 +88,7 @@ class DataSource:
         numPlayers = str(numPlayers)
         inputAge = str(inputAge)
         inputTime = str(inputTime)
-        query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + "AND min_time <= " + inputTime + "LIMIT 10 ORDER BY rank ASC"
+        query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + " AND min_time <= " + inputTime + " LIMIT 10 ORDER BY rank ASC"
         return query
         
 # Query the database
