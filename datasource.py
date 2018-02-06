@@ -21,54 +21,54 @@ except Exception as e:
     exit()
 
 class DataSource:
-	def getGamesByCriteria(self, numPlayers, inputAge, category, inputTime):
-		select_clause = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames'
-		
-		if numPlayers == "N/A" and inputAge == "N/A" and category == "N/A" and inputTime == "N/A":
-			where_clause = ''
-		
-		if (numPlayers!= "N/A"):
-			temp_where = getNumPlayersWhere(numPlayers)
-			where_clause = 'WHERE' + temp_where
-			if (inputAge!= "N/A"):
-				where_clause = where_clause + 'AND' + getMinAgeWhere(inputAge)
-			if(category!= "N/A"):
-				where_clause = where_clause + 'AND' + getCategoryWhere(category)
-			if(inputTime!= "N/A"):
-				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
-
-		elif (inputAge!= "N/A"):
-			where_clause = 'WHERE' + getMinAgeWhere(inputAge)
-			if(category!= "N/A"):
-				where_clause = where_clause + 'AND' + getCategoryWhere(category)
-			if(inputTime!= "N/A"):
-				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
-		
-		elif (category!= "N/A"):
-			where_clause = 'WHERE' + getCategoryWhere(category)
-			if(inputTime!="N/A"):
-				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
-		else:
-			where_clause = 'WHERE ' + getTimeWhere(inputTime)
-			
-		query = select_clause + where_clause + ' ORDER BY rank ASC LIMIT 10'
-		return query
-		
-	
-	def getNumPlayersWhere(self, numPlayers):
-		where = 'max_players >= ' + str(numPlayers) + ' AND min_players <= ' + str(numPlayers) 
-		return where
-	def getMinAgeWhere(self, inputAge):
-		where = 'min_age <= ' + str(inputAge) 
-		return where
-    	
-	def getCategoryWhere(self, category):
-		where = 'mechanic = ' + str(category) 
-		return where
-    	
-	def getTimeWhere(self, inputTime):
-		where = 'max_time >= ' + inputTime + ' AND min_time <= ' + inputTime  
-		return where
+	#def getGamesByCriteria(self, numPlayers, inputAge, category, inputTime):
+	#	select_clause = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames'
+	#	
+	#	if numPlayers == "N/A" and inputAge == "N/A" and category == "N/A" and inputTime == "N/A":
+	#		where_clause = ''
+	#	
+	#	if (numPlayers!= "N/A"):
+	#		temp_where = getNumPlayersWhere(numPlayers)
+	#		where_clause = 'WHERE' + temp_where
+	##		if (inputAge!= "N/A"):
+	#			where_clause = where_clause + 'AND' + getMinAgeWhere(inputAge)
+	#		if(category!= "N/A"):
+	#			where_clause = where_clause + 'AND' + getCategoryWhere(category)
+	##		if(inputTime!= "N/A"):
+	#			where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
+#
+#		elif (inputAge!= "N/A"):
+#			where_clause = 'WHERE' + getMinAgeWhere(inputAge)
+#			if(category!= "N/A"):
+#				where_clause = where_clause + 'AND' + getCategoryWhere(category)
+#			if(inputTime!= "N/A"):
+#				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
+#		
+#		elif (category!= "N/A"):
+#			where_clause = 'WHERE' + getCategoryWhere(category)
+#			if(inputTime!="N/A"):
+#				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
+#		else:
+#			where_clause = 'WHERE ' + getTimeWhere(inputTime)
+#			
+#		query = select_clause + where_clause + ' ORDER BY rank ASC LIMIT 10'
+#		return query
+#		
+#	
+#	def getNumPlayersWhere(self, numPlayers):
+#		where = 'max_players >= ' + str(numPlayers) + ' AND min_players <= ' + str(numPlayers) 
+#		return where
+#	def getMinAgeWhere(self, inputAge):
+#		where = 'min_age <= ' + str(inputAge) 
+#		return where
+ #   	
+##	def getCategoryWhere(self, category):
+#		where = 'mechanic = ' + str(category) 
+#		return where
+ #   	
+#	def getTimeWhere(self, inputTime):
+#		where = 'max_time >= ' + inputTime + ' AND min_time <= ' + inputTime  
+#		return where
 	def getGamesByNumPlayers(self, numPlayers):
         	numPlayers = str(numPlayers)
         	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
@@ -85,7 +85,10 @@ class DataSource:
         	inputTime = str(inputTime)
         	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'ORDER BY rank ASC'
         	return query
-        
+        def getGamesByPlayersAndAge:
+	def getGamesByPlayersAndCategory:
+	def getGamesByPlayersAndTime:
+	def getGamesByAgeAndCategory:
   
 	def getRandomGame(self, RanNumber):
         	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
