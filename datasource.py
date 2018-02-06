@@ -21,7 +21,7 @@ except Exception as e:
     exit()
 
 class DataSource:
-	def getGamesByCriteria(self, numPlayers, inputAge, category, inputTime)
+	def getGamesByCriteria(self, numPlayers, inputAge, category, inputTime):
 		select_clause = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames'
 		
 		if numPlayers = 'N/A' and inputAge = 'N/A' and category = 'N/A' and inputTime = 'N/A':
