@@ -43,14 +43,16 @@ class DataSource:
         inputTime = str(inputTime)
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'ORDER BY rank ASC'
         return query
+    
+    def getRandomGame(self, ranNumber):
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
     #def getGamesByPlayersAndAge();
     #def getGamesByPlayersAndCategory();
     #def getGamesByPlayersAndTime();
     #def getGamesByAgeAndTime();
     #def getGamesByPlayersAndAge();
     
-     def getRandomGame(self, ranNumber):
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
+    
   
 # Query the database
 def main():
