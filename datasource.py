@@ -31,7 +31,7 @@ class DataSource:
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
             return query
     def getGamesByCategory(self, category):
-            query = 'SELECT game_name, avg_time, rank, mechanic, min_age, designer FROM boardgames WHERE mechanic LIKE '%'' + str(category) + '%' 'ORDER BY rank ASC' 
+            query = 'SELECT game_name, avg_time, rank, mechanic, min_age, designer FROM boardgames WHERE mechanic LIKE ' + '% + str(category) + %' + 'ORDER BY rank ASC' 
             return query
     def getGamesByMaxTime(self, inputTime):
             inputTime = str(inputTime)
@@ -49,32 +49,26 @@ class DataSource:
     def getGamesByPlayersAndTime(self, numPlayers, inputTime):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
             return query
-    
+        
+    #def getGamesByPlayersAndCategory:
+
     # The following four methods collect data for 
     # a) max age w time
     # b) max age w category
     def getGamesByAgeAndTime(self, inputAge, inputTime):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + str(inputAge) + 'AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
             return query 
-
         
-
-       
-        	
+    #def getGamesByAgeAndCategory:
+    
+    
     #This method collects data for random game button
     def getRandomGame(self):
             ranNumber = random.randint(1,60)
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(ranNumber)
             return query
         
-    #def getGamesByPlayersAndCategory:
     
-    #def getGamesByAgeAndCategory:
-    #def getGamesByAgeAndTime:
-    #def getGamesByCategoryAndTime:
-    #def getGamesByPlayersAgeAndCategory:
-    #def getGamesByPlayersAgeAndTime:
-    #def getGamesByAgeCategoryAndTime:
     #def getGamesByAll(self, numPlayers, inputAge, category, inputTime0):
         #numPlayers = str(numPlayers)
         #inputAge = str(inputAge)
@@ -87,10 +81,10 @@ def main():
         cursor = connection.cursor()
         gameSearch = DataSource()
         #query = gameSearch.getRandomGame()
-        #query = gameSearch.getGamesByCategory('Puzzle')
+        query = gameSearch.getGamesByCategory('Puzzle')
         #query = gameSearch.getGamesByPlayersAndAge(2,11)
         #query = gameSearch.getGamesByPlayersAndTime(2,60)
-        query = gameSearch.getGamesByAgeAndTime(12,60)
+        #query = gameSearch.getGamesByAgeAndTime(12,60)
              
         cursor.execute(query)
         
