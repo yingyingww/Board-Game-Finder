@@ -125,7 +125,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByAgeCategoryAndTime(14,'Area Control',70)
+        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Network Building',100)
         cursor.execute(query)
         
         # Helps code fail gracefully
