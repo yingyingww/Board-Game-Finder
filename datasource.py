@@ -45,6 +45,13 @@ class DataSource:
     def getGamesByPlayersAndTime(self, numPlayers, inputTime):
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
             return query
+        
+    def getGamesByAgeAndTime(self, inputAge, inputTime):
+            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + str(inputAge) + 'AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
+            return query 
+
+        
+
        
         	
     #This method collects data for random game button
@@ -73,9 +80,10 @@ def main():
         cursor = connection.cursor()
         gameSearch = DataSource()
         #query = gameSearch.getRandomGame()
-        query = gameSearch.getGamesByCategory('Puzzle')
+        #query = gameSearch.getGamesByCategory('Puzzle')
         #query = gameSearch.getGamesByPlayersAndAge(2,11)
         #query = gameSearch.getGamesByPlayersAndTime(2,60)
+        query = getGamesByAgeAndTime(12,60)
              
         cursor.execute(query)
         
