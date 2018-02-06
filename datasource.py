@@ -61,6 +61,10 @@ def main():
         query = gameSearch.getRandomGame();
         cursor.execute(query)
         
+        if (cursor== null)
+        	print('0 records')
+        	exit()
+        
         for row in cursor.fetchall():
             print(row)
 
