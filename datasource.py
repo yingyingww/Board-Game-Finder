@@ -129,7 +129,7 @@ def main():
         cursor.execute(query)
         
         # Helps code fail gracefully
-        if (cursor.rowcount = 0):
+        if (cursor.rowcount == 0):
             print("No games found")
             connection.close()
             exit()
