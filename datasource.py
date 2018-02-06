@@ -72,7 +72,8 @@ def main():
         cursor = connection.cursor()
         gameSearch = DataSource()
         #query = gameSearch.getRandomGame();
-        query = gameSearch.getGamesByPlayersAndAge(2,11)
+        #query = gameSearch.getGamesByPlayersAndAge(2,11)
+        query = gameSearch.getGamesByPlayersAndTime(2,60)
              
         cursor.execute(query)
         
