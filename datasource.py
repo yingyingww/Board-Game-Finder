@@ -97,11 +97,11 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByAll(4,14,'Area Control',100)
+        #query = gameSearch.getGamesByAll(4,14,'Area Control',100)
         #query = gameSearch.getGamesByCategory('Puzzle')
         #query = gameSearch.getGamesByPlayersAndAge(2,11)
-        #query = gameSearch.getGamesByPlayersAndTime(2,60)
-        #query = gameSearch.getGamesByAgeAndTime(12,60)
+        query = gameSearch.getGamesByPlayersAndCategory(2,'Card Game')
+        #query = gameSearch.getGamesByAndTime(12,60)
              
         cursor.execute(query)
         
