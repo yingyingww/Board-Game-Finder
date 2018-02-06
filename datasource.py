@@ -26,10 +26,10 @@ class DataSource:
 		
 		if numPlayers == "N/A" and inputAge == "N/A" and category == "N/A" and inputTime == "N/A":
 			where_clause = ''
-		else: where_clause = ' WHERE '
 		
 		if (numPlayers!= "N/A"):
-			where_clause = 'WHERE' + getNumPlayersWhere(numPlayers)
+			temp_where = getNumPlayersWhere(numPlayers)
+			where_clause = 'WHERE' + temp_where
 			if (inputAge!= "N/A"):
 				where_clause = where_clause + 'AND' + getMinAgeWhere(inputAge)
 			if(category!= "N/A"):
