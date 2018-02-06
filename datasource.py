@@ -49,18 +49,17 @@ class DataSource:
     #def getGamesByAgeAndTime();
     #def getGamesByPlayersAndAge();
     
-    def getRandomGame(self):
-        ranRank = random.randint(1,60)
-        ranRank = str(ranRank)
-        print(ranRank)
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + ranRank
+     def getRandomGame(self, ranNumber):
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
   
 # Query the database
 def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getRandomGame();
+        
+        ranNumber = random.randint(1,60)
+        query = gameSearch.getRandomGame(ranNumber)
 
         cursor.execute(query)
         
