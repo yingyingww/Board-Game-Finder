@@ -45,7 +45,7 @@ class DataSource:
         return query
     
     def getRandomGame(self, ranNumber):
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(ranNumber)
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank = 4' 
     #def getGamesByPlayersAndAge();
     #def getGamesByPlayersAndCategory();
     #def getGamesByPlayersAndTime();
