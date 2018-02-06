@@ -21,6 +21,7 @@ except Exception as e:
     exit()
 
 class DataSource:
+    #The following four methods collect data if either no of players, age, category or maxtime was selected alone
     def getGamesByNumPlayers(self, numPlayers):
             numPlayers = str(numPlayers)
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
@@ -30,7 +31,7 @@ class DataSource:
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
             return query
     def getGamesByCategory(self, category):
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE mechanic =' + str(category) + 'ORDER BY rank ASC' 
+            query = 'SELECT game_name, avg_time, rank, mechanic, min_age, designer FROM boardgames WHERE mechanic LIKE '%'' + str(category) + '%' 'ORDER BY rank ASC' 
             return query
     def getGamesByMaxTime(self, inputTime):
             inputTime = str(inputTime)
@@ -46,14 +47,14 @@ class DataSource:
             return query
        
         	
-    
+    #This method collects data for random game button
     def getRandomGame(self):
             ranNumber = random.randint(1,60)
             query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(ranNumber)
             return query
         
     #def getGamesByPlayersAndCategory:
-    #def getGamesByPlayersAndTime:
+    
     #def getGamesByAgeAndCategory:
     #def getGamesByAgeAndTime:
     #def getGamesByCategoryAndTime:
