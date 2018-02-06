@@ -121,7 +121,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByPlayersCategoryAndTime(4,'Network Building',100)
+        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Dice Rolling',100)
         cursor.execute(query)
         
         for row in cursor.fetchall():
