@@ -73,8 +73,7 @@ class DataSource:
         	numPlayers = str(numPlayers)
         	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
         	return query
-
-    	def getGamesByMinAge(self, inputAge):
+	def getGamesByMinAge(self, inputAge):
         	inputAge = str(inputAge) 
         	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
         	return query
