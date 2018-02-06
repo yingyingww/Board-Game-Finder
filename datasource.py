@@ -110,7 +110,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByPlayersAndAge(2,11)
+        query = gameSearch.getGamesByPlayersAndAge(2,14)
         	 
         cursor.execute(query)
         
