@@ -52,6 +52,7 @@ class DataSource:
     def getRandomGame(self):
         ranRank = random.randint(1,60)
         ranRank = str(ranRank)
+        print(ranRank)
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + ranRank
   
 # Query the database
