@@ -23,49 +23,49 @@ except Exception as e:
 class DataSource:
     # The following four methods collect data if  numPlayers, age, category or maxtime was selected alone
     # Just Players
-    def getGamesByNumPlayers(self, numPlayers):
-            numPlayers = str(numPlayers)
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
-            return query
+	def getGamesByNumPlayers(self, numPlayers):
+		numPlayers = str(numPlayers)
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'ORDER BY rank ASC LIMIT 10'
+		return query
 	#Just Age
-    def getGamesByMinAge(self, inputAge):
-            inputAge = str(inputAge) 
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
-            return query
+	def getGamesByMinAge(self, inputAge):
+		inputAge = str(inputAge) 
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
+		return query
 	#Just Category
-    def getGamesByCategory(self, inputCategory):
-            query = "SELECT game_name, avg_time, rank, mechanic, min_age, designer FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC"
-            return query
+	def getGamesByCategory(self, inputCategory):
+		query = "SELECT game_name, avg_time, rank, mechanic, min_age, designer FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC"
+		return query
     #Just Time
-    def getGamesByMaxTime(self, inputTime):
-            inputTime = str(inputTime)
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'ORDER BY rank ASC'
-            return query
+	def getGamesByMaxTime(self, inputTime):
+		inputTime = str(inputTime)
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'ORDER BY rank ASC'
+		return query
 	#Players and Age
-    def getGamesByPlayersAndAge(self, numPlayers, inputAge):
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND min_age <=' + str(inputAge) + 'ORDER BY rank ASC LIMIT 10'
-            return query
+	def getGamesByPlayersAndAge(self, numPlayers, inputAge):
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND min_age <=' + str(inputAge) + 'ORDER BY rank ASC LIMIT 10'
+		return query
         #players and Time
-    def getGamesByPlayersAndTime(self, numPlayers, inputTime):
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
-            return query
+	def getGamesByPlayersAndTime(self, numPlayers, inputTime):
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
+		return query
         #players and Category
-    def getGamesByPlayersAndCategory(self, numPlayers, inputCategory):
-	    numPlayers = str(numPlayers)
-	    query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + ' AND mechanic LIKE '%" + inputCategory + "%' LIMIT 10 ORDER BY rank ASC'
+	def getGamesByPlayersAndCategory(self, numPlayers, inputCategory):
+		numPlayers = str(numPlayers)
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + ' AND mechanic LIKE '%" + inputCategory + "%' LIMIT 10 ORDER BY rank ASC'
 	#category and Time
-    def getGamesByCategoryAndTime(self, inputCategory, inputTime):
-	    inputTime = str(inputTime)
-	    query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' AND  max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'LIMIT 10 ORDER BY rank ASC'
+	def getGamesByCategoryAndTime(self, inputCategory, inputTime):
+		inputTime = str(inputTime)
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' AND  max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'LIMIT 10 ORDER BY rank ASC'
 
     # The following four methods collect data for 
     # a) max age w time
     # b) max age w category
 
 	# Age and time
-    def getGamesByAgeAndTime(self, inputAge, inputTime):
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + str(inputAge) + 'AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
-            return query 
+	def getGamesByAgeAndTime(self, inputAge, inputTime):
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE min_age <=' + str(inputAge) + 'AND max_time >= ' + str(inputTime) + 'AND min_time <= ' + str(inputTime) + 'ORDER BY rank ASC LIMIT 10'
+		return query 
         #Age and Category
     #def getGamesByAgeAndCategory(self, inputAge, inputCategory):
 	#players, age, category
@@ -78,17 +78,17 @@ class DataSource:
     #def getGamesByAgeCategoryAndTime():
     
     #This method collects data for random game button
-    def getRandomGame(self):
-            ranNumber = random.randint(1,60)
-            query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(ranNumber)
-            return query
+	def getRandomGame(self):
+		ranNumber = random.randint(1,60)
+		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(ranNumber)
+		return query
         
     #all criteria
-    def getGamesByAll(self, numPlayers, inputAge, inputCategory, inputTime):
-            numPlayers = str(numPlayers)
-            inputAge = str(inputAge)
-            inputTime = str(inputTime)
-            query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + "AND min_time <= " + inputTime + "LIMIT 10 ORDER BY rank ASC"
+	def getGamesByAll(self, numPlayers, inputAge, inputCategory, inputTime):
+		numPlayers = str(numPlayers)
+		inputAge = str(inputAge)
+		inputTime = str(inputTime)
+		query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + "AND min_time <= " + inputTime + "LIMIT 10 ORDER BY rank ASC"
 	    return query
         
 # Query the database
