@@ -13,6 +13,7 @@ database = 'xaviert'
 user = 'xaviert'
 password = getpass.getpass()
 
+
 # Login to the database
 try:
     connection = psycopg2.connect(database=database, user=user, password=password)
@@ -21,7 +22,10 @@ except Exception as e:
     exit()
 
 class DataSource:
-    # The following four methods collect data if  numPlayers, age, category or maxtime was selected alone
+    # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory but actually provide helpful context
+    # given that age time and category are all terms within our data set (ex: max_time, min_time, min_age, max_age etc 
+    # - felt it was necessary to specify when referring to the users input term 
+    
     # Just Players
     def getGamesByNumPlayers(self, numPlayers):
         numPlayers = str(numPlayers)
@@ -124,6 +128,13 @@ def main():
         query = gameSearch.getGamesByAgeCategoryAndTime(14,'Area Control',70)
         cursor.execute(query)
         
+        # Helps code fail gracefully
+        if (cursor.rowcount = 0):
+            print("No games found")
+            connection.close()
+            exit()
+            
+            
         for row in cursor.fetchall():
             print(row)
 
