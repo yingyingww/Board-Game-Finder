@@ -4,7 +4,7 @@
     Modified by Amy Csizmar Dalal, 24 January 2018
     This is a short example of how to access a PostgreSQL database in Python.
 '''
-
+import random
 import psycopg2
 import getpass
 
