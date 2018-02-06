@@ -80,7 +80,7 @@ class DataSource:
         query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC LIMIT 10"
         return query
         
-    players, age, time
+    #players, age, time
     def getGamesByPlayersAgeAndTime(self, numPlayers, inputAge, inputTime):
         numPlayers = str(numPlayers)
         inputAge = str(inputAge)
