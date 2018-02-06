@@ -87,7 +87,11 @@ class DataSource:
 	
 	def getGamesByPlayersAndAge(self, numPlayers, inputAge):
     		query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + str(numPlayers) + 'AND min_players <= ' + str(numPlayers) + ' AND min_age <=' + str(inputAge) + 'ORDER BY rank ASC LIMIT 10'
-		return query
+			return query
+	
+	def getRandomGame(self, RanNumber):
+        	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
+        
 	#def getGamesByPlayersAndCategory:
 	#def getGamesByPlayersAndTime:
 	#def getGamesByAgeAndCategory:
@@ -102,9 +106,7 @@ class DataSource:
 		#inputTime = str(inputTime)
 		#query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + 'AND min_age <=' + inputAge + ' AND mechanic =' + str(category) + 'AND  max_time >= ' + inputTime + 'AND min_time <= ' + inputTime + 'LIMIT 10 ORDER BY rank ASC'
   
-	def getRandomGame(self, RanNumber):
-        	query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE rank =' + str(RanNumber)
-        
+	
         
 # Query the database
 def main():
