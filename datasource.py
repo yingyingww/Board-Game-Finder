@@ -52,7 +52,8 @@ class DataSource:
         #players and Category
     def getGamesByPlayersAndCategory(self, numPlayers, inputCategory):
         numPlayers = str(numPlayers)
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=' + numPlayers + 'AND min_players <= ' + numPlayers + ' AND mechanic LIKE '%" + inputCategory + "%' LIMIT 10 ORDER BY rank ASC'
+        query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + " AND mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC LIMIT 10"
+        return query
     #category and Time
     def getGamesByCategoryAndTime(self, inputCategory, inputTime):
         inputTime = str(inputTime)
@@ -88,7 +89,7 @@ class DataSource:
         numPlayers = str(numPlayers)
         inputAge = str(inputAge)
         inputTime = str(inputTime)
-        query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + " AND min_time <= " + inputTime + " ORDER BY rank ASC LIMIT 10"
+        query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames WHERE max_players >=" + numPlayers + "AND min_players <= " + numPlayers + "AND min_age <=" + inputAge + " AND mechanic LIKE '%" + inputCategory + "%' AND  max_time >= " + inputTime + "AND min_time <= " + inputTime + "ORDER BY rank ASC LIMIT 10"
         return query
         
 # Query the database
