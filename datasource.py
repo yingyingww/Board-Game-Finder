@@ -52,7 +52,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByCategory("Co-operative")
+        query = gameSearch.getGamesByCategory("Puzzle")
 
         cursor.execute(query)
         
