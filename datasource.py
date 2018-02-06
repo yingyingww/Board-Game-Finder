@@ -58,7 +58,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByNumPlayers(3);
+        query = gameSearch.getGamesByMinAge(11);
 
         cursor.execute(query)
         
