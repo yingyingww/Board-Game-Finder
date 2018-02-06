@@ -28,25 +28,25 @@ class DataSource:
 			where_clause = ''
 		else: where_clause = ' WHERE '
 		
-		if (numPlayers! == "N/A"):
+		if (numPlayers!= "N/A"):
 			where_clause = 'WHERE' + getNumPlayersWhere(numPlayers)
-			if (inputAge! == "N/A"):
+			if (inputAge!= "N/A"):
 				where_clause = where_clause + 'AND' + getMinAgeWhere(inputAge)
-			if(category! == "N/A"):
+			if(category!= "N/A"):
 				where_clause = where_clause + 'AND' + getCategoryWhere(category)
-			if(inputTime!== "N/A"):
+			if(inputTime!= "N/A"):
 				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
 
-		elif (inputAge! == "N/A"):
+		elif (inputAge!= "N/A"):
 			where_clause = 'WHERE' + getMinAgeWhere(inputAge)
-			if(category! == "N/A"):
+			if(category!= "N/A"):
 				where_clause = where_clause + 'AND' + getCategoryWhere(category)
-			if(inputTime! == "N/A"):
+			if(inputTime!= "N/A"):
 				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
 		
-		elif (category! == "N/A"):
+		elif (category!= "N/A"):
 			where_clause = 'WHERE' + getCategoryWhere(category)
-			if(inputTime!=="N/A"):
+			if(inputTime!="N/A"):
 				where_clause = where_clause + 'AND' + getTimeWhere(inputTime)
 		else:
 			where_clause = 'WHERE ' + getTimeWhere(inputTime)
