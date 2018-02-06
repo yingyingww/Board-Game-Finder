@@ -58,7 +58,8 @@ class DataSource:
     def getGamesByMaxTime(self):
         inputTime = str(inputTime)
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames \
-        WHERE max_time >= ' + self.inputTime + 'AND min_time <= ' + self.inputTime + 'ORDER BY rank ASC'
+        WHERE max_time >= ' + self.inputTime + 'AND min_time <= ' + self.inputTime +\
+        'ORDER BY rank ASC'
         return query
     
     #Calls for combinations of two criteria
@@ -80,7 +81,8 @@ class DataSource:
     def getGamesByPlayersAndCategory(self):
         query = "SELECT game_name, avg_time, rank, category, min_age, designer FROM boardgames \
         WHERE max_players >=" + self.numPlayers + "AND min_players <= " + \
-        self.numPlayers + " AND mechanic LIKE '%" + self.inputCategory + "%' ORDER BY rank ASC LIMIT 10"
+        self.numPlayers + " AND mechanic LIKE '%" + self.inputCategory + \
+        "%' ORDER BY rank ASC LIMIT 10"
         return query
     #Category and Time
     def getGamesByCategoryAndTime(self):
@@ -163,8 +165,9 @@ class DataSource:
 def main():
     try:
         cursor = connection.cursor()
-        gameSearch = DataSource()
-        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Network Building',100) #Dummy criteria, these inputs will fail
+        gameSearch = DataSource(5,20,"puzzles",70)
+        query = gameSearch.getGamesByAgeCategoryAndTime() 
+        #Dummy criteria, these inputs will fail
         cursor.execute(query)
         
         # Helps code fail gracefully
