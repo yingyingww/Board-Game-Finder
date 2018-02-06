@@ -58,7 +58,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByMaxTime(45);
+        query = gameSearch.getRandomGame(45);
 
         cursor.execute(query)
         
