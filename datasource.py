@@ -22,8 +22,10 @@ except Exception as e:
     exit()
 
 class DataSource:
-    # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory but actually provide helpful context
-    # given that age time and category are all terms within our data set (ex: max_time, min_time, min_age, max_age etc 
+    # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory 
+    # but actually provide helpful context
+    # given that age time and category are all terms within our data set 
+    # (ex: max_time, min_time, min_age, max_age etc 
     # - felt it was necessary to specify when referring to the users input term 
     
     #Calls for only one criteria
@@ -164,7 +166,8 @@ class DataSource:
         "%' AND  max_time >= " + inputTime + "AND min_time <= " + inputTime + "ORDER BY rank ASC LIMIT 10"
         return query
     
-    #This method collects data for the random game button, selecting a random game from the top 100 ranked games by 
+    #This method collects data for the random game button, selecting a random 
+    # game from the top 100 ranked games by 
     #choosing a random integer and displaying information for that rank.
     
     def getRandomGame(self):
@@ -178,7 +181,8 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Network Building',100) #Dummy criteria, these inputs will fail
+        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Network Building',100) 
+        #Dummy criteria, these inputs will fail
         cursor.execute(query)
         
         # Helps code fail gracefully
