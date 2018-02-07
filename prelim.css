@@ -1,23 +1,66 @@
+.navbar {
+  overflow: auto;
+  background-color: orange;
+}
 
-.dropDownMenu{
-    width: 200px;
-    height: 30px;
-    background: cadetblue;
+/* We learned how to create a navigation bar from w23school */
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: orange;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: gray;
+  color: white;
+}
+
+h1{
+	color: white;
+	font-size: 50px;
+	font-family: "Courier New";
+}
+
+title,h1,h3,p,form{
+	color:white;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+	background-color:rgb(60,60,60);
+	width: 100%
+}
+
+/* We learned how to create the buttons css from w23school */
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 10%;
+    background-color: Orange;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
     
-}
 
-.button{
-    width: 150px;
-    height: 20px;
-    background: aquamarine;
-}
-
-
-Age{
-    float: left;
-
-}
-Length{
-    float: left;
-
-}
