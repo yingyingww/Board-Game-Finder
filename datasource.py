@@ -182,7 +182,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByAgeCategoryAndTime(11,'Network Building',100) 
+        query = gameSearch.getGamesByPlayersAgeAndCategory(3,10,'Puzzles') 
         #Dummy criteria, these inputs will fail
         cursor.execute(query)
         
