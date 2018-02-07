@@ -9,8 +9,8 @@ import getpass
 import random
 
 # Get the database login info. 
-database = 'xaviert'
-user = 'xaviert'
+database = 'wangc2'
+user = 'wangc2'
 password = getpass.getpass()
 
 
