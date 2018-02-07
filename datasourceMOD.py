@@ -26,12 +26,6 @@ class DataSource:
     # given that age time and category are all terms within our data set (ex: max_time, min_time, min_age, max_age etc 
     # - felt it was necessary to specify when referring to the users input term 
     
-    def __init__(self, numPlayers, inputAge, inputCategory, inputTime):
-        self.numPlayers = str(numPlayers)
-        self.inputAge = str(inputAge)
-        self.inputCategory = str(inputCategory)
-        self.inputTime = str(inputTime)
-        
     #Calls for only one criteria
     
     # Just Players
