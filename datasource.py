@@ -2,6 +2,7 @@
     datasource.py
     Tresa Xavier, Calypso Leonard, Yingying Wang Feb, 6, 2018
     Methods to access our boardgames database.
+    Boardgames table created from our sampleBoardGames.csv because this is our clean data set
 '''
 
 import psycopg2
@@ -183,7 +184,7 @@ def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        query = gameSearch.getGamesByPlayersAgeAndCategory(3,10,'Puzzle') 
+        query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game') 
         #Dummy criteria, these inputs will fail
         cursor.execute(query)
         
