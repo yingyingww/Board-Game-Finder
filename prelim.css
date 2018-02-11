@@ -52,6 +52,15 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+input[type=number], select {
+    width: 30%;
+    padding: 3px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
 input[type=submit] {
     width: 10%;
     background-color: Orange;
