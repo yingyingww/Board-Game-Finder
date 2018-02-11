@@ -9,18 +9,7 @@ import psycopg2
 import getpass
 import random
 
-# Get the database login info. 
-database = 'xaviert'
-user = 'xaviert'
-password = getpass.getpass()
 
-
-# Login to the database
-try:
-    connection = psycopg2.connect(database=database, user=user, password=password)
-except Exception as e:
-    print('Connection error: ', e)
-    exit()
 
 class DataSource:
     # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory 
@@ -28,6 +17,17 @@ class DataSource:
     # given that age time and category are all terms within our data set 
     # (ex: max_time, min_time, min_age, max_age etc 
     # - felt it was necessary to specify when referring to the users input term 
+    
+
+    def login():
+        database = 'xaviert'
+        user = 'xaviert'
+        password = getpass.getpass()
+        try:
+            connection = psycopg2.connect(database=database, user=user, password=password)
+        except Exception as e:
+            print('Connection error: ', e)
+            exit()
     
     #Calls for only one criteria
     
@@ -178,6 +178,14 @@ class DataSource:
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
         FROM boardgames WHERE rank =' + str(ranNumber)
         return query
+        
+    '''
+        
+    def search():
+        if category !="" and inputAge != ""and inputTime!="" and inputCategory!="":
+            self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
+        if category !="" and inputAge != ""and inputTime!="" and inputCategory!=""
+    '''
         
 
 def main():
