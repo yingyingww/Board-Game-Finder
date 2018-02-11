@@ -14,7 +14,7 @@ import templates
 import static
 import datasource  
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 info = datasource.DataSource()
 info.login()
