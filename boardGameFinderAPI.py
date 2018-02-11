@@ -24,7 +24,7 @@ def prelimPage():
     return render_template('Preliminary Page.html')
     
 #@app.route('/results')
-#def results():
+#def results()
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -38,4 +38,4 @@ if __name__ == '__main__':
     port = sys.argv[2]
     app.run(host=host, port=port)
 
-   app.run(debug = True)
+    app.run(debug = True)
