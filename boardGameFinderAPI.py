@@ -23,7 +23,7 @@ info.login()
 def prelimPage():
     return render_template('Preliminary Page.html')
     
-@app.route('/results')
+#@app.route('/results')
 #def results():
 
 if __name__ == '__main__':
