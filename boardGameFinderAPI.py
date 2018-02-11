@@ -6,10 +6,10 @@
 '''
 
 import flask
+from flask import render_template
 import sys
 import api_config
-import psycopg2
-import render_template 
+import psycopg2 
 import templates
 import static
 import datasource  
