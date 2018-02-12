@@ -256,6 +256,7 @@ def main():
         #cursor.execute(query)
         for row in query:
             print(row)
+    return()
             
 if __name__ == "__main__":
     main()
