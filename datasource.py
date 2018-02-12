@@ -192,13 +192,13 @@ class DataSource:
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
         
-        noNumPlayers = False
+        noNumPlayer = False
         noInputAge = False
         noInputCategory = False
         noInputTime = False
         
-        if numPlayers == "":
-            noNumPlayers = True
+        if numPlayer == "":
+            noNumPlayer = True
         if inputAge == "":
             noIinputAge = True
         if inputCategory == "":
