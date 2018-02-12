@@ -6,10 +6,10 @@
 '''
 
 import flask
-from flask import render_template
 import sys
 import api_config
-import psycopg2 
+import psycopg2
+import render_template 
 import templates
 import static
 import datasource  
@@ -22,9 +22,22 @@ info = datasource.DataSource()
 @app.route('/')
 def prelimPage():
     return render_template('Preliminary Page.html')
+'''   
+@app.route('/results')
+def results():
+    return render_template('resultPage.html')
+'''
+
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+   if request.method == 'POST':
+      result = request.form.get('Category')
+      print(result)   
+      return render_template("results.html",result = result)
     
-#@app.route('/results')
-#def results()
+@app.route('/random')
+def random():
+    return render_template('resultPage.html')
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
