@@ -254,7 +254,7 @@ def main():
         query = gameSearch.getGamesByAll(5,14,"Card Game",60)
         #query = gameSearch.getGamesByAgeCategoryAndTime(14,"Card Game",60)
         
-        #cursor.execute(query)
+        cursor.execute(query)
         
         
         # Helps code fail gracefully
