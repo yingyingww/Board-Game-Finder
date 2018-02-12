@@ -12,7 +12,7 @@ import random
 # Get the database login info. 
 database = 'xaviert'
 user = 'xaviert'
-password = getpass.getpass()
+password = "MickeyMouse2017"
 
 
 # Login to the database
