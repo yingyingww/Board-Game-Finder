@@ -198,7 +198,7 @@ class DataSource:
         noInputTime = False
         
         if numPlayer == "":
-            noNumPlayer = True
+            noNumPlayers = True
         if inputAge == "":
             noIinputAge = True
         if inputCategory == "":
