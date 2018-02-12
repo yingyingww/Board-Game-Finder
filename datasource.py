@@ -247,13 +247,15 @@ class DataSource:
         
 def main():
     try:
-        cursor = connection.cursor()
+        #cursor = connection.cursor()
         gameSearch = DataSource()
         #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
         #search(self, numPlayers, inputAge, inputCategory, inputTime)
         query = gameSearch.search(5,14,"Card Game", 60)
         
-        cursor.execute(query)
+        #cursor.execute(query)
+        for row in query:
+            print(row)
         
         # Helps code fail gracefully
         if (cursor.rowcount == 0):
