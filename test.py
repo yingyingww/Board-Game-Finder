@@ -220,6 +220,7 @@ class DataSource:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByNumPlayers(numPlayers)
+        return action
         
         '''
         if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
