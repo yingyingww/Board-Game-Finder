@@ -36,7 +36,8 @@ def result():
       gameSearch = DataSource()
       query = gameSearch.getGamesByCategory(result) 
       final_query = cursor.execute(query)
-      return render_template("results.html",result = result)
+      return result
+      #return render_template("results.html",result = result)
     
 @app.route('/random')
 def random():
@@ -47,8 +48,7 @@ if __name__ == '__main__':
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
     info = datasource.DataSource()
-    #info.login()
-    info.getRandomGame()
+    info.result()
         
     host = sys.argv[1]
     port = sys.argv[2]
