@@ -1,16 +1,30 @@
 <!doctype html>
 <html>
+   <head>
+      <title> Games! </title>
+   </head>
+   <link rel="stylesheet" href="static/prelim.css">
    <body>
+      <table boarder = 1>
+         {% for game in result %}
+         <tr>
+            <th> {{game}} </th>
+         </tr>
+         {% endfor %}
+      </table>
+      
+               
    <!--
       {% for item in result.iteritems() %}
          print ((item))
-   -->
+   
    <ol>
       {% for item in result %}
       <li> {{ item }} </li>
       {% endfor %}
 
    </ol>
+-->
    <!--
       <table border = 1>
          {% for key, value in result.iteritems() %}
