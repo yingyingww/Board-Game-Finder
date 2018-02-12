@@ -9,6 +9,16 @@ import psycopg2
 import getpass
 import random
 
+database = 'xaviert'
+user = 'xaviert'
+password = getpass.getpass()
+
+# Login to the database
+try:
+    connection = psycopg2.connect(database=database, user=user, password=password)
+except Exception as e:
+    print('Connection error: ', e)
+    exit()
 
 
 class DataSource:
@@ -18,7 +28,7 @@ class DataSource:
     # (ex: max_time, min_time, min_age, max_age etc 
     # - felt it was necessary to specify when referring to the users input term 
     
-
+    '''
     def login():
         database = 'xaviert'
         user = 'xaviert'
@@ -28,6 +38,7 @@ class DataSource:
         except Exception as e:
             print('Connection error: ', e)
             exit()
+    '''
     
     #Calls for only one criteria
     
