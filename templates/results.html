@@ -5,12 +5,12 @@
       {% for item in result.iteritems() %}
          print ((item))
    -->
-   <ul>
-      {% for item in result.items() %}
+   <ol>
+      {% for item in result %}
       <li> {{ item }} </li>
       {% endfor %}
 
-   </ul>
+   </ol>
    <!--
       <table border = 1>
          {% for key, value in result.iteritems() %}
