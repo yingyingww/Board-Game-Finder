@@ -5,9 +5,10 @@
       {% for item in result.iteritems() %}
          print ((item))
    -->
-   {% for item in result%}
-      <th> {{ item }} </th>
-
+   <ul>
+      {% for item in result%}
+      <li> {{ item }} </li>
+   </ul>
    <!--
       <table border = 1>
          {% for key, value in result.iteritems() %}
