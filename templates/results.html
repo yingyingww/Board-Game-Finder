@@ -1,7 +1,10 @@
 <!doctype html>
 <html>
    <body>
-   
+      
+      {% for item in result.iteritems() %}
+         print ((item))
+   <!--
       <table border = 1>
          {% for key, value in result.iteritems() %}
          
@@ -12,6 +15,8 @@
             
          {% endfor %}
       </table>
+
+   -->
       
    </body>
 </html>
