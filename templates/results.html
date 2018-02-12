@@ -5,11 +5,27 @@
    </head>
    <link rel="stylesheet" href="static/prelim.css">
    <body>
-      <ol>
+      <h1> We Found Games! </h1>
+      <table>
+         <tr>
+            <th> Game Name</th>
+            <th> Avg. Time </th>
+            <th> Rank </th>
+            <th> Category </th>
+            <th> Minimum Age </th>
+            <th> Designer </th>
+         </tr>
+            
          {% for game in result %}
-            <li> {{game}} </li>
+            <tr>
+               <td> {{game[0]}} </td>
+               <td> {{game[1]}} </td>
+               <td> {{game[2]}} </td>
+               <td> {{game[3]}} </td>
+               <td> {{game[4]}} </td>
+               <td> {{game[5]}} </td>
+            </tr>
          {% endfor %}
-      </ol>
-      
+      </table>      
    </body>
 </html>
