@@ -9,8 +9,8 @@ import psycopg2
 import getpass
 import random
 
-database = 'xaviert'
-user = 'xaviert'
+database = 'wangc2'
+user = 'wangc2'
 password = getpass.getpass()
 
 # Login to the database
