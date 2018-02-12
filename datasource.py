@@ -233,10 +233,18 @@ class DataSource:
         if noNumPlayer and not noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
-            action = self.getGamesByNumPlayers(numPlayers) 
-        return action
+            action = self.getGamesByNumPlayers(numPlayers)
+            
+        try:
+            cursor = connection.cursor()
+            cursor.execute(action)
+            return cursor.fetchall()
+            
+        except Exception as e:
+            print('Cursor error', e)
+            connection.close()
+            exit()
         
-
 def main():
     try:
         cursor = connection.cursor()
