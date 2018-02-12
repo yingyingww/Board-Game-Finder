@@ -29,7 +29,7 @@ def results():
     return render_template('resultPage.html')
 '''
 
-@app.route('/result',methods = ['POST', 'GET'])
+@app.route('/results',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
       inputCategory = request.form('Category')
