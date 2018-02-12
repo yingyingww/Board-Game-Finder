@@ -190,7 +190,7 @@ class DataSource:
         FROM boardgames WHERE rank =' + str(ranNumber)
         return query
         
-def search(self, numPlayers, inputAge, inputCategory, inputTime):
+    def search(self, numPlayers, inputAge, inputCategory, inputTime):
         
         noNumPlayers = False
         noInputAge = False
