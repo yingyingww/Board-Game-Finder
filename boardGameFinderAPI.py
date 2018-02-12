@@ -6,7 +6,7 @@
 '''
 
 import flask
-from flask import render_template
+from flask import render_template, Flask, request
 import sys
 import api_config
 import psycopg2
@@ -32,7 +32,10 @@ def results():
 def result():
    if request.method == 'POST':
       result = request.form.get('Category')
-      print(result)   
+      cursor = connection.cursor()
+      gameSearch = DataSource()
+      query = gameSearch.getGamesByCategory(result) 
+      final_query = cursor.execute(query)
       return render_template("results.html",result = result)
     
 @app.route('/random')
