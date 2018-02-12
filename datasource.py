@@ -11,7 +11,7 @@ import random
 
 database = 'xaviert'
 user = 'xaviert'
-password = 'MickeyMouse2017'
+password = getpass.getpass()
 
 # Login to the database
 try:
