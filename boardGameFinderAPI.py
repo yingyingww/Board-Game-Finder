@@ -36,6 +36,7 @@ def result():
       inputAge = request.form('Minimum Age')
       inputNumPlayer = request.form('No. of Players')
       query = info.search(inputNumPlayers, inputAge, inputCategory, inputTime)
+      cursor = connection.cursor()
       cursor.execute(query)
     #missing transmission of information to results
       return render_template('resultPage.html')
