@@ -242,7 +242,7 @@ def main():
         cursor = connection.cursor()
         gameSearch = DataSource()
         #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game') 
-        query = gameSearch.search("", 17,"Card Game", 60)
+        query = gameSearch.search(5," ","Card Game", 60)
         
         cursor.execute(query)
         
