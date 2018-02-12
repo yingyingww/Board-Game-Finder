@@ -246,18 +246,16 @@ class DataSource:
             exit()
             
 def main():
-    try:
-        #cursor = connection.cursor()
-        gameSearch = DataSource()
-        #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
-        #search(self, numPlayers, inputAge, inputCategory, inputTime)
-        query = gameSearch.search("","","Card Game", 60)
+    #cursor = connection.cursor()
+    gameSearch = DataSource()
+    #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
+    #search(self, numPlayers, inputAge, inputCategory, inputTime)
+    query = gameSearch.search("","","Card Game", 60)
         
-        #cursor.execute(query)
-        for row in query:
-            print(row)
+    #cursor.execute(query)
+    for row in query:
+        print(row)
     exit()
             
 if __name__ == "__main__":
     main()
-
