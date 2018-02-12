@@ -32,10 +32,10 @@ def results():
 @app.route('/results',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
-      inputCategory = request.form('Category')
-      inputTime = request.form('Time')
-      inputAge = request.form('Minimum Age')
-      inputNumPlayer = request.form('No. of Players')
+      inputCategory = request.form['Category']
+      inputTime = request.form['Time']
+      inputAge = request.form['Minimum Age']
+      inputNumPlayer = request.form['No. of Players']
       query = info.search(inputNumPlayers, inputAge, inputCategory, inputTime)
       return render_template('results.html',query)
           
