@@ -189,6 +189,11 @@ class DataSource:
         FROM boardgames WHERE rank =' + str(ranNumber)
         return query
         
+    def getGamesNoCriteria(self):
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
+        FROM boardgames LIMIT 10'
+        return query
+    
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
         #setting up Boolean values
         noNumPlayer = False
@@ -239,6 +244,8 @@ class DataSource:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByNumPlayers(numPlayers)
+        if noNumPlayer and noInputAge and noInputCategory and noInputTime:
+            action = self.getGamesNoCriteria()  
             
         try:
             cursor = connection.cursor()
