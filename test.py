@@ -250,9 +250,13 @@ def main():
         gameSearch = DataSource()
         #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
         #search(self, numPlayers, inputAge, inputCategory, inputTime)
-        query = gameSearch.search("",14,"Card Game", 60)
+        #query = gameSearch.search("",14,"Card Game", 60)
+        query_all = gameSearch.getGamesByAll(5,14,"Card Game",60)
+        #query1 = gameSearch.getGamesByAgeCategoryAndTime(14,"Card Game",60)
         
-        cursor.execute(query)
+        #cursor.execute(query)
+        cursor.execute(query_all)
+        #cursor.execute(query1)
         
         # Helps code fail gracefully
         if (cursor.rowcount == 0):
