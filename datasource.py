@@ -257,23 +257,15 @@ def main():
         for row in query:
             print(row)
         
+        '''
         # Helps code fail gracefully
         if (cursor.rowcount == 0):
             print("No games found")
             connection.close()
             exit()
-            
-            
-        for row in cursor.fetchall():
-            print(row)
+        '''
 
 
-    except Exception as e:
-        print('Cursor error', e)
-        connection.close()
-        exit()
-
-    connection.close()
     
     
 if __name__ == "__main__":
