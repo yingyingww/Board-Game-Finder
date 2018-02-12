@@ -177,7 +177,7 @@ class DataSource:
         
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
-        '''
+        
         noNumPlayers = False
         noInputAge = False
         noInputCategory = False
@@ -231,6 +231,7 @@ class DataSource:
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
         if numPlayers=="" and inputAge!="" and inputCategory!="" and inputTime!="":
             action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
+        '''
             
     def getRandomGame(self):
         ranNumber = random.randint(1,101)
