@@ -5,13 +5,11 @@
    </head>
    <link rel="stylesheet" href="static/prelim.css">
    <body>
-      <table boarder = 1>
+      <ol>
          {% for game in result %}
-         <tr>
-            <th> {{game}} </th>
-         </tr>
+            <li> {{game}} </li>
          {% endfor %}
-      </table>
+      </ol>
       
    </body>
 </html>
