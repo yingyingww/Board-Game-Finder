@@ -35,6 +35,17 @@ title,h1,h3,p,form{
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+table{
+	color:white;
+	border: 1px white;
+	border-collapse: collapse; /*removes the ugly box thing*/
+}
+
+th{
+	text-align: center;
+	color:white;
+}
+
 body{
 	background-color:rgb(60,60,60);
 	width: 100%
