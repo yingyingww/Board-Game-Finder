@@ -197,13 +197,13 @@ def search(self, numPlayers, inputAge, inputCategory, inputTime):
         noInputCategory = False
         noInputTime = False
         
-        if numPlayers = "":
+        if numPlayers == "":
             noNumPlayers = True
-        if inputAge = "":
+        if inputAge == "":
             noIinputAge = True
-        if inputCategory = "":
+        if inputCategory == "":
             noInputCategory = True
-        if inputTime = "":
+        if inputTime == "":
             noInputTime = True
 
             
