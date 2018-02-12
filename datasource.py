@@ -256,13 +256,7 @@ def main():
         #cursor.execute(query)
         for row in query:
             print(row)
-        
-       
-        # Helps code fail gracefully
-        #if (cursor.rowcount == 0):
-            #print("No games found")
-            #connection.close()
-            #exit()
+
             
 if __name__ == "__main__":
     main()
