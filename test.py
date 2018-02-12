@@ -190,6 +190,7 @@ class DataSource:
         return query
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
+        '''
         #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
@@ -234,6 +235,12 @@ class DataSource:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByNumPlayers(numPlayers) 
+        '''
+        
+        if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
+            action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
+        if numPlayers=="" and inputAge!="" and inputCategory!="" and inputTime!="":
+            action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
         return action
         
 
@@ -243,7 +250,7 @@ def main():
         gameSearch = DataSource()
         #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
         #search(self, numPlayers, inputAge, inputCategory, inputTime)
-        query = gameSearch.search(5,14,"Card Game", 60)
+        query = gameSearch.search("",14,"Card Game", 60)
         
         cursor.execute(query)
         
