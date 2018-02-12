@@ -9,7 +9,16 @@ import psycopg2
 import getpass
 import random
 
+database = 'wangc2'
+user = 'wangc2'
+password = getpass.getpass()
 
+# Login to the database
+try:
+    connection = psycopg2.connect(database=database, user=user, password=password)
+except Exception as e:
+    print('Connection error: ', e)
+    exit()
 
 class DataSource:
     # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory 
@@ -18,16 +27,17 @@ class DataSource:
     # (ex: max_time, min_time, min_age, max_age etc 
     # - felt it was necessary to specify when referring to the users input term 
     
-
+    '''
     def login():
-        database = 'wangc2'
-        user = 'wangc2'
+        database = 'xaviert'
+        user = 'xaviert'
         password = getpass.getpass()
         try:
             connection = psycopg2.connect(database=database, user=user, password=password)
         except Exception as e:
             print('Connection error: ', e)
             exit()
+    '''
     
     #Calls for only one criteria
     
@@ -173,10 +183,14 @@ class DataSource:
     # game from the top 100 ranked games by 
     #choosing a random integer and displaying information for that rank.
     
-
-        
+    def getRandomGame(self):
+        ranNumber = random.randint(1,101)
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
+        FROM boardgames WHERE rank =' + str(ranNumber)
+        return query
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
+        #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
         noInputCategory = False
@@ -219,32 +233,17 @@ class DataSource:
         if noNumPlayer and not noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
-            action = self.getGamesByNumPlayers(numPlayers)
+            action = self.getGamesByNumPlayers(numPlayers) 
         return action
-        
-        '''
-        if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
-            action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
-        if numPlayers=="" and inputAge!="" and inputCategory!="" and inputTime!="":
-            action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
-        '''
-            
-    def getRandomGame(self):
-        ranNumber = random.randint(1,101)
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
-        FROM boardgames WHERE rank =' + str(ranNumber)
-        return query
         
 
 def main():
     try:
         cursor = connection.cursor()
         gameSearch = DataSource()
-        #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game') 
-        #Dummy criteria, these inputs will fail
-        
-        #search(self, numPlayers, inputAge, inputCategory, inputTime):
-        query = gameSearch.search(5,14,"Card Game", 60)
+        #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
+        #search(self, numPlayers, inputAge, inputCategory, inputTime)
+        query = gameSearch.search(5,"","Card Game", 60)
         
         cursor.execute(query)
         
@@ -269,3 +268,11 @@ def main():
     
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
