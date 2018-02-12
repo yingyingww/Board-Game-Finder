@@ -190,13 +190,55 @@ class DataSource:
         FROM boardgames WHERE rank =' + str(ranNumber)
         return query
         
-    '''
+def search(self, numPlayers, inputAge, inputCategory, inputTime):
         
-    def search():
-        if category !="" and inputAge != ""and inputTime!="" and inputCategory!="":
-            self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
-        if category !="" and inputAge != ""and inputTime!="" and inputCategory!=""
-    '''
+        noNumPlayers = False
+        noInputAge = False
+        noInputCategory = False
+        noInputTime = False
+        
+        if numPlayers = "":
+            noNumPlayers = True
+        if inputAge = "":
+            noIinputAge = True
+        if inputCategory = "":
+            noInputCategory = True
+        if inputTime = "":
+            noInputTime = True
+
+            
+        if !noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+            action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
+        if noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+            action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
+        if !noNumPlayer and noInputAge and !noInputCategory and !noInputTime:
+            action = self.getGamesByPlayersCategoryAndTime(numPlayers, inputCategory, inputTime)
+        if !noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+            action = self.getGamesByPlayersAgeAndTime(numPlayers, inputAge, inputTime)
+        if !noNumPlayer and !noInputAge and !noInputCategory and noInputTime:
+            action = self.getGamesByPlayersAgeAndCategory(numPlayers, inputAge, inputCategory) 
+        if noNumPlayer and !noInputAge and !noInputCategory and noInputTime:
+            action = self.getGamesByAgeAndCategory(inputAge, inputCategory)
+        if noNumPlayer and !noInputAge and noInputCategory and !noInputTime:
+            action = self.getGamesByAgeAndTime(inputAge, inputTime)
+        if noNumPlayer and noInputAge and !noInputCategory and !noInputTime:
+            action = self.getGamesByCategoryAndTime(inputCategory, inputTime)
+        if !noNumPlayer and noInputAge and !noInputCategory and noInputTime:
+            action = self.getGamesByPlayersAndCategory(numPlayers, inputCategory)
+        if !noNumPlayer and noInputAge and noInputCategory and !noInputTime:
+            action = self.getGamesByPlayersAndTime(numPlayers, inputTime) 
+        if !noNumPlayer and !noInputAge and noInputCategory and noInputTime:
+            action = self.getGamesByPlayersAndAge(numPlayers, inputAge)
+            
+        if noNumPlayer and noInputAge and noInputCategory and !noInputTime:
+            action = self.getGamesByMaxTime(inputTime)
+        if noNumPlayer and noInputAge and !noInputCategory and noInputTime:
+            action = self.getGamesByCategory(inputCategory)
+        if noNumPlayer and !noInputAge and noInputCategory and noInputTime:
+            action = self.getGamesByMinAge(inputAge) 
+        if !noNumPlayer and noInputAge and noInputCategory and noInputTime:
+            action = self.getGamesByNumPlayers(numPlayers) 
+        return action
         
 
 def main():
