@@ -32,12 +32,12 @@ def results():
 def result():
    if request.method == 'POST':
       result = request.form.get('Category')
+      print(result, file=sys.stderr)
       cursor = connection.cursor()
       gameSearch = DataSource()
       query = gameSearch.getGamesByCategory(result) 
       final_query = cursor.execute(query)
-      return result
-      #return render_template("results.html",result = result)
+      return render_template("results.html",result = result)
     
 @app.route('/random')
 def random():
@@ -48,7 +48,6 @@ if __name__ == '__main__':
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
     info = datasource.DataSource()
-    info.result()
         
     host = sys.argv[1]
     port = sys.argv[2]
