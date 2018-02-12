@@ -12,7 +12,8 @@ import api_config
 import psycopg2
 import templates
 import static
-import datasource  
+import datasource
+import json 
 
 app = flask.Flask(__name__)
 
@@ -36,19 +37,8 @@ def result():
       inputAge = request.form('Minimum Age')
       inputNumPlayer = request.form('No. of Players')
       query = info.search(inputNumPlayers, inputAge, inputCategory, inputTime)
-    #missing transmission of information to results
       return render_template('results.html',query)
-      
-
-      '''
-      result = request.form.get('Category')
-      cursor = connection.cursor()
-      gameSearch = DataSource()
-      query = gameSearch.getGamesByCategory(result) 
-      final_query = cursor.execute(query)
-      return render_template("results.html",result = result)
-      '''
-    
+          
 @app.route('/random', methods = ['POST', 'GET'])
 def random():
     return render_template('resultPage.html')
