@@ -177,54 +177,49 @@ class DataSource:
         
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
-        
-        noNumPlayers = False
+        noNumPlayer = False
         noInputAge = False
         noInputCategory = False
-        noInputTime = False
-        
-        if numPlayers = "":
-            noNumPlayers = True
-        if inputAge = "":
+        noInputTime = False        
+        if numPlayers == "":
+            noNumPlayer = True
+        if inputAge == "":
             noIinputAge = True
-        if inputCategory = "":
+        if inputCategory == "":
             noInputCategory = True
-        if inputTime = "":
+        if inputTime == "":
             noInputTime = True
-
-            
-        if !noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+        #determine which criteria to use    
+        if not noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
-        if noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+        if noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
-        if !noNumPlayer and noInputAge and !noInputCategory and !noInputTime:
+        if not noNumPlayer and noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByPlayersCategoryAndTime(numPlayers, inputCategory, inputTime)
-        if !noNumPlayer and !noInputAge and !noInputCategory and !noInputTime:
+        if not noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByPlayersAgeAndTime(numPlayers, inputAge, inputTime)
-        if !noNumPlayer and !noInputAge and !noInputCategory and noInputTime:
+        if not noNumPlayer and not noInputAge and not noInputCategory and noInputTime:
             action = self.getGamesByPlayersAgeAndCategory(numPlayers, inputAge, inputCategory) 
-        if noNumPlayer and !noInputAge and !noInputCategory and noInputTime:
+        if noNumPlayer and not noInputAge and not noInputCategory and noInputTime:
             action = self.getGamesByAgeAndCategory(inputAge, inputCategory)
-        if noNumPlayer and !noInputAge and noInputCategory and !noInputTime:
+        if noNumPlayer and not noInputAge and noInputCategory and not noInputTime:
             action = self.getGamesByAgeAndTime(inputAge, inputTime)
-        if noNumPlayer and noInputAge and !noInputCategory and !noInputTime:
+        if noNumPlayer and noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByCategoryAndTime(inputCategory, inputTime)
-        if !noNumPlayer and noInputAge and !noInputCategory and noInputTime:
+        if not noNumPlayer and noInputAge and not noInputCategory and noInputTime:
             action = self.getGamesByPlayersAndCategory(numPlayers, inputCategory)
-        if !noNumPlayer and noInputAge and noInputCategory and !noInputTime:
+        if not noNumPlayer and noInputAge and noInputCategory and not noInputTime:
             action = self.getGamesByPlayersAndTime(numPlayers, inputTime) 
-        if !noNumPlayer and !noInputAge and noInputCategory and noInputTime:
+        if not noNumPlayer and not noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByPlayersAndAge(numPlayers, inputAge)
-            
-        if noNumPlayer and noInputAge and noInputCategory and !noInputTime:
+        if noNumPlayer and noInputAge and noInputCategory and not noInputTime:
             action = self.getGamesByMaxTime(inputTime)
-        if noNumPlayer and noInputAge and !noInputCategory and noInputTime:
+        if noNumPlayer and noInputAge and not noInputCategory and noInputTime:
             action = self.getGamesByCategory(inputCategory)
-        if noNumPlayer and !noInputAge and noInputCategory and noInputTime:
+        if noNumPlayer and not noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByMinAge(inputAge) 
-        if !noNumPlayer and noInputAge and noInputCategory and noInputTime:
-            action = self.getGamesByNumPlayers(numPlayers) 
-        return action
+        if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
+            action = self.getGamesByNumPlayers(numPlayers)
         
         '''
         if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
