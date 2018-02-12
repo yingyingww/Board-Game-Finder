@@ -197,13 +197,17 @@ class DataSource:
         noInputTime = False        
         if numPlayers == "":
             noNumPlayer = True
+            print("no NumPlayer")
         if inputAge == "":
             noIinputAge = True
+            print("no inputAge")
         if inputCategory == "":
             noInputCategory = True
+            print("no category")
         if inputTime == "":
             noInputTime = True
-        print("no Player" + noNumPlayer + " age " + noInputAge + " category " + noInputCategory + " time " + noInputTime)
+            print("no time")
+       # print("no Player" + noNumPlayer + " age " + noInputAge + " category " + noInputCategory + " time " + noInputTime)
         #determine which criteria to use    
         if not noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
