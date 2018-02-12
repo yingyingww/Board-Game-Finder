@@ -52,20 +52,20 @@ class DataSource:
     def getGamesByMinAge(self, inputAge):
         inputAge = str(inputAge)
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
-        FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC'
+        FROM boardgames WHERE min_age <=' + inputAge + 'ORDER BY rank ASC LIMIT 10'
         return query
     #Just Category
     def getGamesByCategory(self, inputCategory):
         inputCategory = str(inputCategory)
         query = "SELECT game_name, avg_time, rank, mechanic, min_age, designer \
-        FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC"
+        FROM boardgames WHERE mechanic LIKE '%" + inputCategory + "%' ORDER BY rank ASC LIMIT 10"
         return query
     #Just Time
     def getGamesByMaxTime(self, inputTime):
         inputTime = str(inputTime)
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
         FROM boardgames WHERE max_time >= ' + inputTime + 'AND min_time <= ' \
-        + inputTime + 'ORDER BY rank ASC'
+        + inputTime + 'ORDER BY rank ASC LIMIT 10'
         return query
     
     #Calls for combinations of two criteria
@@ -255,7 +255,7 @@ def main():
     gameSearch = DataSource()
     #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
     #search(self, numPlayers, inputAge, inputCategory, inputTime)
-    query = gameSearch.search("",12,"","")
+    query = gameSearch.search("","","","")
         
     #cursor.execute(query)
     for row in query:
