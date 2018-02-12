@@ -244,7 +244,7 @@ class DataSource:
             print('Cursor error', e)
             connection.close()
             exit()
-        
+            
 def main():
     try:
         #cursor = connection.cursor()
