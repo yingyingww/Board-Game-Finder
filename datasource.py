@@ -20,7 +20,6 @@ except Exception as e:
     print('Connection error: ', e)
     exit()
 
-
 class DataSource:
     # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory 
     # but actually provide helpful context
@@ -191,12 +190,11 @@ class DataSource:
         return query
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
-        
+        #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
         noInputCategory = False
-        noInputTime = False
-        
+        noInputTime = False        
         if numPlayers == "":
             noNumPlayer = True
         if inputAge == "":
@@ -205,8 +203,7 @@ class DataSource:
             noInputCategory = True
         if inputTime == "":
             noInputTime = True
-
-            
+        #determine which criteria to use    
         if not noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
         if noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
