@@ -188,9 +188,10 @@ class DataSource:
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer \
         FROM boardgames WHERE rank =' + str(ranNumber)
         return query
+    '''
         
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
-        '''
+        
         #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
@@ -235,13 +236,14 @@ class DataSource:
             action = self.getGamesByMinAge(inputAge) 
         if not noNumPlayer and noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByNumPlayers(numPlayers) 
-        '''
+        
         
         if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
         if numPlayers=="" and inputAge!="" and inputCategory!="" and inputTime!="":
             action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
         return action
+    '''
         
 
 def main():
