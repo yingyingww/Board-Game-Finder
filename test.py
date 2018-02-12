@@ -229,7 +229,7 @@ class DataSource:
         '''
         if numPlayers!="" and inputAge!="" and inputCategory!="" and inputTime!="":
             action = self.getGamesByAll(numPlayers, inputAge, inputCategory, inputTime)
-        if numPlayers="" and inputAge!="" and inputCategory!="" and inputTime!="":
+        if numPlayers=="" and inputAge!="" and inputCategory!="" and inputTime!="":
             action = self.getGamesByAgeCategoryAndTime(inputAge,inputCategory,inputTime)
             
     def getRandomGame(self):
