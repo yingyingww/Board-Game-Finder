@@ -31,8 +31,13 @@ def results():
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
+      inputCategory = request.form('Category')
+      inputTime = request.form('Time')
+      inputAge = request.form('Minimum Age')
+      inputNumPlayer = request.form('No. of Players')
+      info.search(inputNumPlayers, inputAge, inputCategory, inputTime)                     
+
       result = request.form.get('Category')
-      print(result, file=sys.stderr)
       cursor = connection.cursor()
       gameSearch = DataSource()
       query = gameSearch.getGamesByCategory(result) 
