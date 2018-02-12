@@ -15,7 +15,7 @@ password = getpass.getpass()
 
 # Login to the database
 try:
-    connection = psycopg2.connect(database=database, user=user, password=password, host="localhost")
+    connection = psycopg2.connect(database=database, user=user, password=password)
 except Exception as e:
     print('Connection error: ', e)
     exit()
