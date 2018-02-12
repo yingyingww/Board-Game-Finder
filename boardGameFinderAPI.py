@@ -31,7 +31,6 @@ if __name__ == '__main__':
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
     info = datasource.DataSource()
-    info.login()
     info.getRandomGame()
         
     host = sys.argv[1]
