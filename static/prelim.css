@@ -51,7 +51,7 @@ body{
 	width: 100%
 }
 
-/* We learned how to create the buttons css from w23school */
+/* We learned how to create the form + buttons css from w23school */
 input[type=text], select {
     width: 30%;
     padding: 12px 20px;
