@@ -9,7 +9,7 @@ import psycopg2
 import getpass
 import random
 
-
+'''
 database = 'xaviert'
 user = 'xaviert'
 password = 'pencil926ruby'
@@ -17,7 +17,7 @@ password = 'pencil926ruby'
 database = 'wangc2'
 user = 'wangc2'
 password = 'towel672nose'
-'''
+
 
 # Login to the database
 try:
