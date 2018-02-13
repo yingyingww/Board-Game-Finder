@@ -46,12 +46,7 @@ th{
 	color:white;
 }
 
-td1{ 
-	color:white;
-	border: 1px solid #ddd;
-	border-collapse: collapse;	
-	input[type=number]
-}
+
 
 body{
 	background-color:rgb(60,60,60);
