@@ -2,16 +2,21 @@
     datasource.py
     Tresa Xavier, Calypso Leonard, Yingying Wang Feb, 6, 2018
     Methods to access our boardgames database.
-    Boardgames table created from our sampleBoardGames.csv because this is our clean data set
+    Boardgames table created from our 
 '''
 
 import psycopg2
 import getpass
 import random
 
+'''
 database = 'xaviert'
 user = 'xaviert'
 password = 'pencil926ruby'
+'''
+database = 'wangc2'
+user = 'wangc2'
+password = 'towel672nose'
 
 # Login to the database
 try:
