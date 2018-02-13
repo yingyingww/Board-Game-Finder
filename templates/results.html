@@ -8,6 +8,7 @@
       <h1> We Found Games! </h1>
       <table>
          <tr>
+            <th> Pretty Picture! </th>
             <th> Game Name</th>
             <th> Avg. Time </th>
             <th> Rank </th>
@@ -18,6 +19,7 @@
             
          {% for game in result %}
             <tr>
+               <td> <img src=game[6] alt="Game Cover">
                <td> {{game[0]}} </td>
                <td> {{game[1]}} </td>
                <td> {{game[2]}} </td>
