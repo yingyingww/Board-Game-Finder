@@ -21,7 +21,7 @@ password = 'towel672nose'
 
 # Login to the database
 try:
-    connection = psycopg2.connect(database=database, user=user, password=password)
+    connection = psycopg2.connect(database=database, user=user, password=password, host=localhost)
 except Exception as e:
     print('Connection error: ', e)
     exit()
