@@ -35,6 +35,8 @@ def result():
       inputCategory = request.form['Category']
       inputTime = request.form['Time']
       inputAge = request.form['Minimum Age']
+      print(inputAge)
+
       inputNumPlayer = request.form['No. of Players']
       query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
       return render_template('results.html',result = query)
