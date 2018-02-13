@@ -11,16 +11,18 @@
         <a href="/About"> About</a>
          <a class="active"> Game Results </a>
     </div>
-     <!--- if len(result) == 0{
-      <h1> We're sorry, no board games fit your critieria </h1>
-      <p> Click here to try a different search:</p>
-     <form action="/">        
+
+      <h1> Boardgame Results: </h1>
+      
+      if len(result) == 0{
+         <h1> We're sorry, no board games fit your critieria </h1>
+         <p> Click here to try a different search:</p>
+         <form action="/">        
              <input type="submit" value="Back to HomePage">
-      </form> 
+         </form> 
       }
       else{ 
-     --->
-      <h1> Boardgame Results: </h1>
+   
       <table>
          <tr>
             <th> Rank </th>
