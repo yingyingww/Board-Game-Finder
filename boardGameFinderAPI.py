@@ -22,7 +22,7 @@ info = datasource.DataSource()
 
 @app.route('/')
 def prelimPage():
-    return render_template('Preliminary Page.html')
+    return render_template('index.html')
 '''   
 @app.route('/results')
 def results():
