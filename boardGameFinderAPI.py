@@ -30,7 +30,7 @@ def results():
 '''
 
 @app.route('/About')
-def homePage():
+def aboutPage():
     return render_template('about.html')
 
 @app.route('/results',methods = ['POST', 'GET'])
