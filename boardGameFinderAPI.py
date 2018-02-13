@@ -29,6 +29,10 @@ def results():
     return render_template('resultPage.html')
 '''
 
+@app.route('/About')
+def homePage():
+    return render_template('about.html')
+
 @app.route('/results',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
