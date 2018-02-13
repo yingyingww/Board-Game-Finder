@@ -184,20 +184,29 @@ class DataSource:
         "ORDER BY rank ASC LIMIT 10"
         return query
     
-    #This method collects data for the random game button, selecting a random 
-    # game from the top 100 ranked games by 
-    #choosing a random integer and displaying information for that rank.
-    
-    def getRandomGame(self):
-        ranNumber = random.randint(1,101)
-        query = 'SELECT game_name, avg_time, rank, category, min_age, designer, image_url \
-        FROM boardgames WHERE rank =' + str(ranNumber)
-        return query
+
         
     def getGamesNoCriteria(self):
         query = 'SELECT game_name, avg_time, rank, category, min_age, designer, image_url \
         FROM boardgames LIMIT 10'
         return query
+    
+    #This method collects data for the random game button, selecting a random 
+    # game from the top 100 ranked games by 
+    #choosing a random integer and displaying information for that rank.
+    def getRandomGame(self):
+        ranNumber = random.randint(1,101)
+        query = 'SELECT game_name, avg_time, rank, category, min_age, designer, image_url \
+        FROM boardgames WHERE rank =' + str(ranNumber)
+        try:
+            cursor = connection.cursor()
+            cursor.execute(query)
+            return cursor.fetchall()
+            
+        except Exception as e:
+            print('Cursor error', e)
+            connection.close()
+            exit()
     
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
         #setting up Boolean values
