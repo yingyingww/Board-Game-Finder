@@ -39,6 +39,7 @@ title,h1,h3,p,form{
 td,th{
 	color:white;
 	border: 1px solid #ddd;
+	text-align: center;
 	border-collapse: collapse; /*removes the ugly box thing*/
 }
 
