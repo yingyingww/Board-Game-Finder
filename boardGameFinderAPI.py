@@ -46,7 +46,7 @@ def result():
 @app.route('/random', methods = ['POST', 'GET'])
 def random():
     query = info.getRandomGame()
-    return render_template('results.html')
+    return render_template('results.html', result = query)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
