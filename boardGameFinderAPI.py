@@ -41,9 +41,7 @@ def result():
       inputAge = request.form['Minimum Age']
       inputNumPlayer = request.form['No. of Players']
       query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
-      
-
-    return render_template('results.html',result = query)
+      return render_template('results.html',result = query)
           
 @app.route('/random', methods = ['POST', 'GET'])
 def random():
