@@ -11,7 +11,7 @@ import random
 
 database = 'xaviert'
 user = 'xaviert'
-password = 'MickeyMouse2017'
+password = 'pencil926ruby'
 
 # Login to the database
 try:
