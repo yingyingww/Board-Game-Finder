@@ -43,8 +43,8 @@
                <td> <img src="{{game[6]}}" alt="Game Cover" width="300" height="200" /> </td>
                <td> {{game[0]}} </td>
                <td> {{game[3]}} </td>
-               <td> {{game[4]}} </td>
-               <td> {{game[1]}} </td>
+               <td> {{game[4] | int}} </td>
+               <td> {{game[1] | int}} </td>
                <td> {{game[5]}} </td>
             </tr>
          {% endfor %}
