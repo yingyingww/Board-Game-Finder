@@ -1,40 +1,30 @@
 '''
     datasource.py
-    Tresa Xavier, Calypso Leonard, Yingying Wang Feb, 6, 2018
-    Methods to access our boardgames database.
-    Boardgames table created from our 
+    Tresa Xavier, Calypso Leonard, Yingying Wang 
+    Feb. 14th, 2018
+    SQL Methods to access our boardgames database 
+    and create queries.
 '''
 
 import psycopg2
 import getpass
 import random
 
-'''
-database = 'xaviert'
-user = 'xaviert'
-password = 'pencil926ruby'
-'''
+# Login to the database
 database = 'wangc2'
 user = 'wangc2'
 password = 'towel672nose'
 
-
-# Login to the database
 try:
     connection = psycopg2.connect(database=database, user=user, password=password, host="localhost")
 except Exception as e:
     print('Connection error: ', e)
     exit()
 
+# DataSource class to create queries based on certain criteria
 class DataSource:
-    # Constructor names may seem gratuitous with inputAge, inputTime and inputCategory 
-    # but actually provide helpful context
-    # given that age time and category are all terms within our data set 
-    # (ex: max_time, min_time, min_age, max_age etc 
-    # - felt it was necessary to specify when referring to the users input term 
-   
-
-    #Calls for only one criteria
+    
+    #Calls for only one criterion
     
     # Just Players
     def getGamesByNumPlayers(self, numPlayers):
@@ -161,8 +151,6 @@ class DataSource:
         + inputTime + "ORDER BY rank ASC LIMIT 10"
         return query
     
-
-        
     #Call for a query using all criteria
     def getGamesByAll(self, numPlayers, inputAge, inputCategory, inputTime):
         numPlayers = str(numPlayers)
@@ -175,8 +163,7 @@ class DataSource:
         "ORDER BY rank ASC LIMIT 10"
         return query
     
-
-        
+    #if no input
     def getGamesNoCriteria(self):
         query = 'SELECT game_name, avg_time, avg_rating, category, min_age, designer, image_url,\
         min_players, max_players FROM boardgames ORDER BY rank LIMIT 10'
@@ -198,7 +185,8 @@ class DataSource:
             print('Cursor error', e)
             connection.close()
             exit()
-    
+            
+    # This method determine which getter funciton is to be used in search
     def search(self, numPlayers, inputAge, inputCategory, inputTime):
         #setting up Boolean values
         noNumPlayer = False
