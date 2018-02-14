@@ -40,7 +40,7 @@ td,th,tr{
 	color:white;
 	border: 1px solid #ddd;
 	text-align: center;
-	border-collapse: collapse; /*removes the ugly box thing*/
+	border-collapse: collapse; /*removes the ugly box */
 }
 
 th{
