@@ -1,6 +1,6 @@
 '''
     boardGameFinderAPI.py
-    Calypso Leonard, Tresa Xavier, YingYing Wang
+    Calypso Leonard, Tresa Xavier, Yingying Wang
     Flask API used for a board game finder web app
     for CS 257, Winter 2018.
 '''
@@ -17,16 +17,10 @@ import json
 app = flask.Flask(__name__)
 
 info = datasource.DataSource()
-#info.login()
 
 @app.route('/')
 def homePage():
     return render_template('index.html')
-'''   
-@app.route('/results')
-def results():
-    return render_template('resultPage.html')
-'''
 
 @app.route('/About')
 def aboutPage():
