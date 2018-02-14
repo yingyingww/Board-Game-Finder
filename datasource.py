@@ -209,7 +209,7 @@ class DataSource:
             noNumPlayer = True
         if inputAge == "":
             noIinputAge = True
-            inputAge = 0 #dummy value, no age in the data is larger
+            inputAge = 0 #dummy value, no age in the data is smaller
         if inputCategory == "":
             noInputCategory = True
         if inputTime == "":
