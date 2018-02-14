@@ -8,7 +8,7 @@
 import flask
 from flask import render_template, Flask, request
 import sys
-import api_config
+#import api_config
 import psycopg2
 import templates
 import static
