@@ -17,7 +17,7 @@ import json
 
 app = flask.Flask(__name__)
 
-info = datasource.DataSource()
+info = datasource.DataSource(rank)
 #info.login()
 
 @app.route('/')
