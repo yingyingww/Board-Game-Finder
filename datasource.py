@@ -45,7 +45,7 @@ class DataSource:
             exit()
     '''
     
-    __init__(self, sortType):
+    def __init__(self, sortType):
         self.sortType = sortType
     #Calls for only one criteria
     
