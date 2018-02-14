@@ -269,16 +269,32 @@ class DataSource:
             exit()
             
 def main():
-    #cursor = connection.cursor()
-    gameSearch = DataSource()
-    #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
-    #search(self, numPlayers, inputAge, inputCategory, inputTime)
-    #query = gameSearch.search(300,12,"Partnership","30")
+    try:
+        cursor = connection.cursor()
+        gameSearch = DataSource()
+        #search(self, numPlayers, inputAge, inputCategory, inputTime)
+        query = gameSearch.search(2,12,"Card Game",120)
+        #Dummy criteria, these inputs will fail
+        cursor.execute(query)
         
-    #cursor.execute(query)
-    for row in query:
-        print(row)
-    exit()
+        # Helps code fail gracefully
+        if (cursor.rowcount == 0):
+            print("No games found")
+            connection.close()
+            exit()
             
+            
+        for row in cursor.fetchall():
+            print(row)
+
+
+    except Exception as e:
+        print('Cursor error', e)
+        connection.close()
+        exit()
+
+    connection.close()
+    
+    
 if __name__ == "__main__":
     main()
