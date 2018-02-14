@@ -263,6 +263,7 @@ class DataSource:
             cursor.execute(action)
             if cursor.rowcount == 0:
                 action = "Sorry! No games found"
+                return action
             else:                
                 return cursor.fetchall()
             
