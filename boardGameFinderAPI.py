@@ -41,7 +41,7 @@ def result():
         inputAge = request.form['Minimum Age']
         inputNumPlayer = request.form['No. of Players']
         query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
-        if cursor.rowcount==0:        
+        if cursor.rowcount!=0:        
             return render_template('results.html',result = query)
         else:
             return render_template('noResults.html')
