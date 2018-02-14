@@ -50,6 +50,11 @@ database for different board games
 
 results.html: An HTML file which displays the game data retieved from the SQL query.
 
+noResults.html: An HTML file which displays no result found with chosen criteria to the user 
+
+about.html: An HTML file which displays the purpose of this game finder and explains how it works
+
+
 Static folder:
 
 prelim.css: A css file containing the style basis for our web app.
