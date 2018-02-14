@@ -5,7 +5,7 @@
  -    Database login info for the "Board Game Finder" sample web		
  -    app for CS 257, Winter 2018.		
  -'''		
- -		
+ -	
  -		
  -database = 'wangc2'		
  -user = 'wangc2'		
