@@ -17,7 +17,7 @@ import json
 
 app = flask.Flask(__name__)
 
-info = datasource.DataSource("rank")
+info = datasource.DataSource()
 #info.login()
 
 @app.route('/')
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
-    info = datasource.DataSource("rank")
+    info = datasource.DataSource()
         
     host = sys.argv[1]
     port = sys.argv[2]
