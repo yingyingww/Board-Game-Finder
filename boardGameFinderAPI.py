@@ -35,13 +35,16 @@ def aboutPage():
 
 @app.route('/results',methods = ['POST', 'GET'])
 def result():
-   if request.method == 'POST':
-      inputCategory = request.form['Category']
-      inputTime = request.form['Time']
-      inputAge = request.form['Minimum Age']
-      inputNumPlayer = request.form['No. of Players']
-      query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
-      return render_template('results.html',result = query)
+    if request.method == 'POST':
+        inputCategory = request.form['Category']
+        inputTime = request.form['Time']
+        inputAge = request.form['Minimum Age']
+        inputNumPlayer = request.form['No. of Players']
+        query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
+        if query != "No games found":        
+            return render_template('results.html',result = query)
+        else:
+            return render_template('noResults.html')
           
 @app.route('/random', methods = ['POST', 'GET'])
 def random():
