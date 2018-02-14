@@ -39,7 +39,7 @@
             
          {% for game in result %}
             <tr>
-               <td> {{game[2]}} </td>
+               <td> {{game[2] | int}} </td>
                <td> <img src="{{game[6]}}" alt="Game Cover" width="300" height="200" /> </td>
                <td> {{game[0]}} </td>
                <td> {{game[3]}} </td>
