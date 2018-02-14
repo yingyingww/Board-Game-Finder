@@ -273,7 +273,7 @@ def main():
     gameSearch = DataSource()
     #query = gameSearch.getGamesByPlayersAgeAndCategory(2,12,'Card Game')
     #search(self, numPlayers, inputAge, inputCategory, inputTime)
-    query = gameSearch.search(300,12,"Partnership","30")
+    #query = gameSearch.search(300,12,"Partnership","30")
         
     #cursor.execute(query)
     for row in query:
