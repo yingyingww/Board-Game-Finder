@@ -261,7 +261,10 @@ class DataSource:
         try:
             cursor = connection.cursor()
             cursor.execute(action)
-            return cursor.fetchall()
+            if cursor.rowcount == 0:
+                action = "Sorry! No games found"
+            else:                
+                return cursor.fetchall()
             
         except Exception as e:
             print('Cursor error', e)
