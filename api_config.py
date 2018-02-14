@@ -7,6 +7,6 @@
  -'''		
  -		
  -		
- -database = 'xaviert'		
- -user = 'xaviert'		
- -password = 'MickeyMouse2017'
+ -database = 'wangc2'		
+ -user = 'wangc2'		
+ -password = 'towel672nose'
