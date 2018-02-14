@@ -34,6 +34,7 @@
             <th> Category </th>
             <th> Min. Age </th>
             <th> Max. Time <sub> (in mins)</sub></th>
+            <th> Min ~ Max No. Players </th>
             <th> Game Designer </th>
          </tr>
             
@@ -45,7 +46,9 @@
                <td> {{game[3]}} </td>
                <td> {{game[4] | int}} </td>
                <td> {{game[1] | int}} </td>
+               <td> {{game[7] | int ~ game[8] | int}} </td>
                <td> {{game[5]}} </td>
+         
             </tr>
          {% endfor %}
       </table> 
