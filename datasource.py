@@ -44,9 +44,7 @@ class DataSource:
             print('Connection error: ', e)
             exit()
     '''
-    
-   ''' def __init__(self, sortType):
-        self.sortType = sortType'''
+
     #Calls for only one criteria
     
     # Just Players
