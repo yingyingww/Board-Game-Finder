@@ -129,7 +129,7 @@ class DataSource:
         inputAge = str(inputAge)
         query = "SELECT game_name, avg_time, avg_rating, category, min_age, designer, image_url,\
         min_players, max_players FROM boardgames WHERE min_age <=" + inputAge + " AND mechanic LIKE '%" \
-        + inputCategory + "%' "ORDER BY" + sortType + " ASC LIMIT 10"
+        + inputCategory + "%' ORDER BY" + sortType + " ASC LIMIT 10"
         return query
         
      #Calls for combinations of three criteria
