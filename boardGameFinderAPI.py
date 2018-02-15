@@ -31,6 +31,7 @@ def aboutPage():
 def result():
     if request.method == 'POST':
         inputCategory = request.form['Category']
+        print(inputCategory)
         inputTime = request.form['Time']
         inputAge = request.form['Minimum Age']
         inputNumPlayer = request.form['No. of Players']
