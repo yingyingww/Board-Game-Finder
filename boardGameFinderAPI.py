@@ -16,7 +16,11 @@ import json
 
 app = flask.Flask(__name__)
 
-info = datasource.DataSource()
+inputCategory = request.form['Category']
+inputTime = request.form['Time']
+inputAge = request.form['Minimum Age']
+inputNumPlayer = request.form['No. of Players']
+info = datasource.DataSource(inputNumPlayers, inputAge, inputCategory, inputTime)
 
 @app.route('/')
 def homePage():
@@ -29,11 +33,7 @@ def aboutPage():
 @app.route('/results',methods = ['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        inputCategory = request.form['Category']
-        inputTime = request.form['Time']
-        inputAge = request.form['Minimum Age']
-        inputNumPlayer = request.form['No. of Players']
-        query = info.search(inputNumPlayer, inputAge, inputCategory, inputTime)
+        query = info.search()
         if query == "Sorry! No games found":        
             return render_template('noResults.html')
         else:
