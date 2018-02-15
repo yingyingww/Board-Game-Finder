@@ -1,13 +1,13 @@
 Our project is currently a fully functional web app which accepts up to four criteria and searches a large database to 
 return a set of boardgames which fit the input requirements. Users can search on the basis of number of players, length
-of play, type of gameplay, and age of the youngest player, or using any combination of these.
+of play, type of gameplay, and suitable age, or using any combination of these.
 
 Features:
 -A homepage with a set of dropdown menus and a bar which only accepts numbers as input which allow the user
 to input their preferences.
 -A results page which shows users 10 games which relevant information such as name, number of players, and category,
 as well as a photo of the game's cover art.
--A rancom-game selector which displays data for a random game in top 100 ranked games.
+-A random-game selector which displays data for a random game in top 100 ranked games.
 -An About page, which describes the in greater detail what each criteria entails.
 
 
@@ -36,7 +36,7 @@ Link to data: https://www.kaggle.com/mrpantherson/board-game-data
 
 [web project D] Project Plan Assignment.pdf: A pdf file outlining the inital goals and format of our project.
 
-boardGameFinder.API: A Python script which transmits search information from the HTML to our SQL queries using Flask.
+boardGameFinderAPI.py: A Python script which transmits search information from the HTML to our SQL queries using Flask.
 
 datasource.py: A Python script which creates strings for SQL queries based on which criteria are selected by the user.
 
