@@ -165,6 +165,7 @@ class DataSource:
             
     # This method determines which getter funciton is to be used in search
     def selectFunction(self):
+        action = self.getGamesByAll() 
         #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
@@ -186,8 +187,8 @@ class DataSource:
             action = self.getGamesByAgeCategoryAndTime()
         if not noNumPlayer and noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByPlayersCategoryAndTime()
-        #if not noNumPlayer and not noInputAge and noInputCategory and not noInputTime:
-           # action = self.getGamesByPlayersAgeAndTime()
+        if not noNumPlayer and not noInputAge and noInputCategory and not noInputTime:
+            action = self.getGamesByPlayersAgeAndTime()
         if not noNumPlayer and not noInputAge and not noInputCategory and noInputTime:
             action = self.getGamesByPlayersAgeAndCategory() 
         if noNumPlayer and not noInputAge and not noInputCategory and noInputTime:
@@ -200,7 +201,6 @@ class DataSource:
             action = self.getGamesByPlayersAndCategory()
         if not noNumPlayer and noInputAge and noInputCategory and not noInputTime:
             action = self.getGamesByPlayersAndTime() 
-            print("hello")
         if not noNumPlayer and not noInputAge and noInputCategory and noInputTime:
             action = self.getGamesByPlayersAndAge()
         if noNumPlayer and noInputAge and noInputCategory and not noInputTime:
