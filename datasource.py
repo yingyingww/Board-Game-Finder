@@ -180,7 +180,7 @@ class DataSource:
             exit()
             
     # This method determines which getter funciton is to be used in search
-    def selectFuntion(self):
+    def selectFunction(self):
         #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
