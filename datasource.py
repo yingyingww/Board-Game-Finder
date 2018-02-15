@@ -190,7 +190,7 @@ class DataSource:
             noNumPlayer = True
         if self.inputAge == "":
             noIinputAge = True
-            self.inputAge = 0 #dummy value, no age in the data is smaller
+            self.inputAge = str(0) #dummy value, no age in the data is smaller
         if self.inputCategory == "":
             noInputCategory = True
         if self.inputTime == "":
