@@ -35,15 +35,16 @@ def result():
         inputAge = request.form['Minimum Age']
         inputNumPlayer = request.form['No. of Players']
         info = datasource.DataSource(inputNumPlayers, inputAge, inputCategory, inputTime)
-        query = info.selectFunction()
-        searchResult = info.search()
-        if searchResult == "Sorry! No games found":        
+        action = info.selectFunction()
+        query = info.search(action)
+        if query == "Sorry! No games found":        
             return render_template('noResults.html')
         else:
-            return render_template("results.html",result = searchResult)
+            return render_template("results.html",result = query)
           
 @app.route('/random', methods = ['POST', 'GET'])
 def random():
+    info = datasource.DataSource(5, 21, "Puzzel", 200)
     query = info.getRandomGame()
     return render_template('results.html', result = query)
 
