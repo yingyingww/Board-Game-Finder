@@ -186,7 +186,7 @@ class DataSource:
             action = self.getGamesByAgeCategoryAndTime()
         if not noNumPlayer and noInputAge and not noInputCategory and not noInputTime:
             action = self.getGamesByPlayersCategoryAndTime()
-        if not noNumPlayer and not noInputAge and not noInputCategory and not noInputTime:
+        if not noNumPlayer and not noInputAge and noInputCategory and not noInputTime:
             action = self.getGamesByPlayersAgeAndTime()
             print("word")
         if not noNumPlayer and not noInputAge and not noInputCategory and noInputTime:
