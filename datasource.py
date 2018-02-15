@@ -231,9 +231,9 @@ class DataSource:
         return action
     
     #Selects and executes SQL search
-    def search(self):
+    def search(self, action):
         
-        action = self.selectFunction()
+        #action = self.selectFunction()
             
         try:
             cursor = connection.cursor()
