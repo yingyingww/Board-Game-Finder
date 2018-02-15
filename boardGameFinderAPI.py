@@ -49,7 +49,9 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
-    info = datasource.DataSource()
+    #info = datasource.DataSource()
+    info = datasource.DataSource("0", "0", "Puzzel", "0")
+
         
     host = sys.argv[1]
     port = sys.argv[2]
