@@ -165,7 +165,7 @@ class DataSource:
             
     # This method determines which getter funciton is to be used in search
     def selectFunction(self):
-        action = self.getGamesByAll() 
+        action = self.getGamesByAll() #failsafe in case no if statement is entered
         #setting up Boolean values
         noNumPlayer = False
         noInputAge = False
