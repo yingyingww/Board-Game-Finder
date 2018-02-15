@@ -17,7 +17,7 @@ import json
 app = flask.Flask(__name__)
 
 
-info = datasource.DataSource(0, 0, "", 0)
+info = datasource.DataSource("0", "0", "Puzzel", "0")
 
 @app.route('/')
 def homePage():
