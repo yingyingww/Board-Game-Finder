@@ -26,7 +26,7 @@ class DataSource:
     
     
     def __init__(self, numPlayers, inputAge, inputCategory, inputTime):
-        self.numPlayer = str(numPlayers)
+        self.numPlayers = str(numPlayers)
         self.inputAge = str(inputAge)
         self.inputCategory = inputCategory
         self.inputTime = str(inputTime)
