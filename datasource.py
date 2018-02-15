@@ -64,7 +64,7 @@ class DataSource:
     def getGamesByMaxTime(self):
         query = 'SELECT game_name, avg_time, avg_rating, category, min_age, designer, image_url,\
         min_players, max_players FROM boardgames WHERE max_time >= ' + self.inputTime + 'AND min_time <= ' \
-        + self.inputTime + 'ORDER BY rank ASC LIMIT 10'
+        + self.inputTime + 'ORDER BY avg_time ASC LIMIT 10'
         return query
     
     #Calls for combinations of two criteria
