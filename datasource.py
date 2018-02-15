@@ -233,7 +233,7 @@ class DataSource:
     #Selects and executes SQL search
     def search(self):
         
-        action = selectFunction()
+        action = self.selectFunction()
             
         try:
             cursor = connection.cursor()
