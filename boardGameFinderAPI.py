@@ -16,9 +16,6 @@ import json
 
 app = flask.Flask(__name__)
 
-
-#info = datasource.DataSource("0", "0", "Puzzel", "0")
-
 @app.route('/')
 def homePage():
     return render_template('index.html')
@@ -31,7 +28,6 @@ def aboutPage():
 def result():
     if request.method == 'POST':
         inputCategory = request.form['Category']
-        print(inputCategory)
         inputTime = request.form['Time']
         inputAge = request.form['Minimum Age']
         inputNumPlayer = request.form['No. of Players']
@@ -52,9 +48,6 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
-    #info = datasource.DataSource()
-    #info = datasource.DataSource("0", "0", "Puzzel", "0")
-
         
     host = sys.argv[1]
     port = sys.argv[2]
