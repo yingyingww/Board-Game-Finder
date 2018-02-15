@@ -35,8 +35,7 @@ def result():
         inputAge = request.form['Minimum Age']
         inputNumPlayer = request.form['No. of Players']
         info = datasource.DataSource(inputNumPlayer, inputAge, inputCategory, inputTime)
-        action = info.selectFunction()
-        query = info.search(action)
+        query = info.search()
         if query == "Sorry! No games found":        
             return render_template('noResults.html')
         else:
