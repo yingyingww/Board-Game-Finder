@@ -110,7 +110,7 @@ class DataSource:
     def getGamesByAgeAndCategory(self):
         query = "SELECT game_name, avg_time, avg_rating, category, min_age, designer, image_url,\
         min_players, max_players FROM boardgames WHERE min_age >=" + self.inputAge + " AND mechanic LIKE '%" \
-        + inputCategory + "%' ORDER BY rank ASC LIMIT 10"
+        + self.inputCategory + "%' ORDER BY rank ASC LIMIT 10"
         return query
         
      #Calls for combinations of three criteria
