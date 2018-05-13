@@ -51,4 +51,4 @@ prelim.css: A css file containing the style basis for our web app.
 * Tresa Xavier
 
 ## Screenshots:
-![alt text](screenshots/screenshot of homePage.png "home")
+![alt text](screenshots/homePage.png "home")
