@@ -50,4 +50,13 @@ prelim.css: A css file containing the styling basis for our web app.
 * Tresa Xavier
 
 ## Screenshots:
+##### Home Page:
 ![alt text](screenshots/home.png "home")
+##### About Page:
+![alt text](screenshots/about.png "about")
+### Selecting Criteria from drop-down boxes:
+![alt text](screenshots/dropdown.png "criteria")
+#### Game Results:
+![alt text](screenshots/gameResults.png "results")
+###### Random Game:
+![alt text](screenshots/random.png "random")
