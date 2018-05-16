@@ -8,12 +8,14 @@ of play, type of gameplay, and suitable age, or using any combination of these.
 * python3
 * [PostgreSQL](https://www.postgresql.org/)
 * [psycopg2](http://initd.org/psycopg/) module in python3
-* Flask
+* [Flask](http://flask.pocoo.org)
 ###### Load the Board Game database into postgresql 
 To create a new database table, run the command 
+
 '''
 $ psql -f createtable.sql
 '''
+
 You will need to enter your database password when prompted.
 
 Then run
