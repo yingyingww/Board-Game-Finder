@@ -5,17 +5,39 @@ return a set of board games which fit the input requirements. Users can search o
 of play, type of gameplay, and suitable age, or using any combination of these.
 ## Run this app
 ###### Dependencies
-* [PostgreSQL] (https://www.postgresql.org/)
 * python3
-* psycopg2 module in python3
+* [PostgreSQL](https://www.postgresql.org/)
+* [psycopg2](http://initd.org/psycopg/) module in python3
 * Flask
 ###### Load the Board Game database into postgresql 
-To create a new database
+To create a new database table, run the command 
+'''
+$ psql -f createtable.sql
+'''
+You will need to enter your database password when prompted.
 
-using createb boardgames
+Then run
+'''
+$ psql
+'''
+to enter the "interpreter"
 
-Then load the tabes  
-like psql boardgames < boardgames.sql
+Type
+'''
+\dt
+'''
+at the prompt. You should see your table in the database.
+
+Import data
+'''
+\copy boardgames FROM 'boardGame.csv' DELIMITER ',' CSV
+'''
+
+Quit 
+'''
+\q
+'''
+
 ###### Change configuration in datasource.py
 change it to your own postgresql info
 
