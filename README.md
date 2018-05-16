@@ -3,7 +3,7 @@
 Our project is currently a fully functional web app which accepts up to four criteria and searches a large database to 
 return a set of board games which fit the input requirements. Users can search on the basis of the number of players, length
 of play, type of gameplay, and suitable age, or using any combination of these.
-## Run this app
+## Run this app:
 ###### Dependencies
 * python3
 * [PostgreSQL](https://www.postgresql.org/)
@@ -61,7 +61,7 @@ as well as a photo of the game's cover art.
 * A random-game selector which displays data for a random game in top 100 ranked games.
 * An About page, which describes in greater detail what each criterion entails.
 
-## Files in this repository
+## Files in this repository:
 ###### This repo contains code for the database-driven web project. It consists of the following files:
 * createtable.sql: A Python script used to create a database and set up the table(s), including table columns and types.
 * boardGames.csv: A comma-space delimited text file containing data on 5000 board games from the website boardgamegeek.com. We retrieved this [data](https://www.kaggle.com/mrpantherson/board-game-data) from a user's post on Kaggle.com, on which it is listed as available for projects. 
