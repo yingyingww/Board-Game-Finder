@@ -3,6 +3,25 @@
 Our project is currently a fully functional web app which accepts up to four criteria and searches a large database to 
 return a set of board games which fit the input requirements. Users can search on the basis of the number of players, length
 of play, type of gameplay, and suitable age, or using any combination of these.
+## Run this app
+###### Dependencies
+* [PostgreSQL] (https://www.postgresql.org/)
+* python3
+* psycopg2 module in python3
+* Flask
+###### Load the Board Game database into postgresql 
+To create a new database
+
+using createb boardgames
+
+Then load the tabes  
+like psql boardgames < boardgames.sql
+###### Change configuration in datasource.py
+change it to your own postgresql info
+
+######Ryb the API on your device
+$python3 xxxxxx localhost 5000
+
 
 ## Features:
 -A homepage with a set of drop-down menus and a bar which only accepts numbers as input which allows the user
