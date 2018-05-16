@@ -54,9 +54,9 @@ prelim.css: A css file containing the styling basis for our web app.
 ![alt text](screenshots/home.png "home")
 ##### About Page:
 ![alt text](screenshots/about.png "about")
-### Selecting Criteria from drop-down boxes:
+##### Selecting Criteria from drop-down boxes:
 ![alt text](screenshots/dropdown.png "criteria")
-#### Game Results:
+##### Game Results:
 ![alt text](screenshots/gameResults.png "results")
-###### Random Game:
+##### Random Game:
 ![alt text](screenshots/random.png "random")
