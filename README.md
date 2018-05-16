@@ -10,41 +10,47 @@ of play, type of gameplay, and suitable age, or using any combination of these.
 * [psycopg2](http://initd.org/psycopg/) module in python3
 * [Flask](http://flask.pocoo.org)
 ###### Load the Board Game database into postgresql 
-To create a new database table, run the command 
-
-'''
+To create a new database table, run the command (no need to create again later if there's existing database table)
+```
 $ psql -f createtable.sql
-'''
-
+```
 You will need to enter your database password when prompted.
 
 Then run
-'''
+```
 $ psql
-'''
+```
 to enter the "interpreter"
 
 Type
-'''
+```
 \dt
-'''
+```
 at the prompt. You should see your table in the database.
 
 Import data
-'''
+```
 \copy boardgames FROM 'boardGame.csv' DELIMITER ',' CSV
-'''
+```
 
-Quit 
-'''
+Quit with command
+```
 \q
-'''
+```
 
 ###### Change configuration in datasource.py
-change it to your own postgresql info
+* Edit datasource.py and update the database/user/password to new postgresql info.
+* Ensure that the permissions on datasource.py allow execution
 
-######Ryb the API on your device
-$python3 xxxxxx localhost 5000
+##### Run the user interface
+```
+$ python3 boardGameFinderAPI.py localhost 5000
+```
+Now, when you run the app, you should see:
+```
+Running on http://localhost:5000/ (Press CTRL+C to quit)
+```
+Navigate to the URL indicated in the console
 
 
 ## Features:
