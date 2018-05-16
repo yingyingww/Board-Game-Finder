@@ -50,4 +50,4 @@ prelim.css: A css file containing the styling basis for our web app.
 * Tresa Xavier
 
 ## Screenshots:
-![alt text](screenshots/homePage.png "home")
+![alt text](screenshots/home.png "home")
